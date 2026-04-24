@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mobile Developer Portfolio
 
-## Getting Started
+Портфолио для мобильной разработки на `Next.js`.
 
-First, run the development server:
+## Что делаем
+
+Сайт состоит из двух основных частей:
+
+- главная страница;
+- отдельные страницы проектов.
+
+Проектов планируется 5-10.
+
+## С чего начинаем
+
+Разработка начинается со страницы проекта.
+
+Сначала собираем сильный шаблон кейса по дизайну, затем на его основе делаем остальные страницы и только после этого собираем главную.
+
+## Стек
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Запуск
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+После запуска сайт будет доступен на `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Порядок работы
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Подготовить базовую структуру проекта.
+2. Реализовать страницу проекта по дизайну.
+3. Вынести переиспользуемые секции и компоненты.
+4. Подключить данные проектов.
+5. Собрать главную страницу.
+6. Подготовить проект к деплою.
 
-## Learn More
+## Ближайший следующий шаг
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Получить дизайн страницы проекта и начать реализацию первого экрана на моковых данных.
