@@ -1,48 +1,29 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
-
 # Project Rules
 
-## Основной принцип
-
-Разработка начинается со страницы проекта, не с главной страницы.
-
-Сначала собираем шаблон кейса, затем на его основе строим структуру остальных проектов и главной страницы.
-
-## Технологии
+## Stack
 
 - Next.js
 - React
 - TypeScript
 - Tailwind CSS
+- Geist font
 
-## Правила разработки
+## Development Rules
 
-- Используем `App Router`.
-- Верстка должна быть `mobile-first`.
-- Повторяющиеся части интерфейса выносятся в компоненты.
-- Данные проекта не зашиваются напрямую в UI-компоненты без необходимости.
-- Для всех проектов используется единая структура данных.
-- Главная страница делается только после первого готового шаблона страницы проекта.
-- Архитектуру не усложняем раньше времени.
+- Use `App Router`.
+- Build project pages first, then the home page.
+- Keep layout `mobile-first`.
+- Make components reusable.
+- Do not hardcode project content into UI components without a good reason.
+- Use a shared project data model for all cases.
+- Extract repeated sections into components.
+- Do not overcomplicate the architecture too early.
 
-## Контент проекта
+## Project Data
 
-Для каждого кейса желательно предусмотреть:
+- Project content is defined by the `Project` type: [src/types/project.ts](/d:/Portfolio%20Development/mobile-portfolio/src/types/project.ts:1)
 
-- название;
-- краткое описание;
-- роль;
-- стек;
-- задачи;
-- решения;
-- результаты;
-- изображения или скриншоты;
-- ссылки, если они нужны.
+## Workflow
 
-## Текущий рабочий приоритет
-
-Следующий этап разработки: реализация страницы проекта по присланному дизайну.
+- Development goes through `dev`, then `main`.
+- Deploy instructions live in [docs/deploy.md](/d:/Portfolio%20Development/mobile-portfolio/docs/deploy.md:1)

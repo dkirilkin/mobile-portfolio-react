@@ -39,6 +39,7 @@ function MenuIcon({ open }: { open: boolean }) {
 export function SiteMenu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const isProjectPage = pathname.startsWith("/projects/");
 
   const closeMenu = () => setIsOpen(false);
 
@@ -47,7 +48,7 @@ export function SiteMenu() {
       <button
         type="button"
         onClick={() => setIsOpen((currentState) => !currentState)}
-        className="fixed right-4 top-4 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d8d0d7] bg-white text-[#231d2a] shadow-[0_6px_18px_rgba(55,45,72,0.08)] sm:right-6 sm:top-6"
+        className="fixed right-4 top-4 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d8d0d7] bg-white text-[#231d2a] shadow-[0_6px_18px_rgba(55,45,72,0.08)] sm:right-6 sm:top-6 lg:hidden"
         aria-expanded={isOpen}
         aria-controls="site-mobile-menu"
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
@@ -56,22 +57,25 @@ export function SiteMenu() {
       </button>
 
       {isOpen ? (
-        <div className="fixed inset-0 z-50 bg-[#231d2a]/28" onClick={closeMenu} />
+        <div
+          className="fixed inset-0 z-50 bg-[#231d2a]/28 lg:hidden"
+          onClick={closeMenu}
+        />
       ) : null}
 
       <aside
         id="site-mobile-menu"
-        className={`fixed right-0 top-0 z-50 h-full w-[min(22rem,88vw)] overflow-y-auto border-l border-[#ddd5e1] bg-[#fcf8fc] px-5 py-6 transition-transform duration-200 ${
+        className={`fixed right-0 top-0 z-50 h-full w-[min(22rem,88vw)] overflow-y-auto border-l border-[#ddd5e1] bg-[#fcf8fc] px-5 py-6 transition-transform duration-200 lg:left-0 lg:right-auto lg:z-30 lg:w-[min(22.5rem,30vw)] lg:max-w-[360px] lg:translate-x-0 lg:border-l-0 lg:border-r ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        aria-hidden={!isOpen}
+        aria-hidden={!isOpen && !isProjectPage}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between lg:justify-start">
           <p className="text-[1rem] font-semibold text-[#231d2a]">Меню</p>
           <button
             type="button"
             onClick={closeMenu}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d0d7] bg-white text-[#231d2a]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d0d7] bg-white text-[#231d2a] lg:hidden"
             aria-label="Закрыть меню"
           >
             <MenuIcon open />
@@ -96,7 +100,7 @@ export function SiteMenu() {
               href="/projects"
               onClick={closeMenu}
               className={`block rounded-2xl px-4 py-3 text-[1rem] leading-6 ${
-                pathname === "/projects"
+                pathname === "/projects" || isProjectPage
                   ? "bg-[#ece3ff] font-semibold text-[#4f3a86]"
                   : "text-[#231d2a]"
               }`}
