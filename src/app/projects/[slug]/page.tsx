@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { DemoAccessCard } from "@/components/demo-access-card";
 import { MarkdownContent } from "@/components/markdown-content";
 import { ProjectCarousel } from "@/components/project-carousel";
-import { getProjectBySlug, projects } from "@/data/projects";
+import { getProjectBySlug, getSortedProjects } from "@/data/projects";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -32,7 +32,7 @@ function CodeIcon() {
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
+  return getSortedProjects().map((project) => ({
     slug: project.slug,
   }));
 }

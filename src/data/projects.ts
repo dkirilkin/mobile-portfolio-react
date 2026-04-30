@@ -107,9 +107,17 @@ const ecommerceDemoAccessHTML = `
 
 export const projects: Project[] = [
   {
+    order: 1,
+    isOnHome: true,
     slug: "e-commerce",
     title: "Онлайн покупки",
     category: "Электронная коммерция / Онлайн-покупки",
+    homeTitle: "Онлайн покупки",
+    homeIconPath: "/images/svg_icons/shopping_bag.svg",
+    homeIconBg: "#774F83",
+    homeDescription: "MVP интернет-магазина с корзиной, оплатой и личным кабинетом.",
+    homeCategory: "E-commerce",
+    homeTags: ["FlutterFlow", "Supabase", "Xano"],
     descriptionMarkdown: `
 Полноценное демо-приложение интернет-магазина одежды и обуви с оплатой через Ю-Кассу.
 
@@ -142,9 +150,17 @@ export const projects: Project[] = [
     ),
   },
   {
+    order: 2,
+    isOnHome: true,
     slug: "cognitivy",
     title: "Cognitivy",
     category: "Психология / Саморазвитие",
+    homeTitle: "Cognitivy",
+    homeIconPath: "/images/svg_icons/thought.svg",
+    homeIconBg: "#0055D5",
+    homeDescription: "Когнитивный дневник для анализа эмоций и мыслей.",
+    homeCategory: "Mental Health",
+    homeTags: ["FlutterFlow", "Supabase", "Xano"],
     descriptionMarkdown: `
 Приложение для ведения когнитивного дневника в рамках современных подходов КПТ и РЭПТ. Помогает анализировать эмоции, выявлять деструктивные мысли и менять шаблоны мышления.
 
@@ -171,9 +187,17 @@ export const projects: Project[] = [
     ),
   },
   {
+    order: 3,
+    isOnHome: true,
     slug: "e-dy-delivery",
     title: "Аналог Самоката: курьерам",
     category: "Электронная коммерция / Доставка",
+    homeTitle: "Курьеры",
+    homeIconPath: "/images/svg_icons/pedal_bike.svg",
+    homeIconBg: "#EA570F",
+    homeDescription: "Пошаговое приложение для курьеров darkstore.",
+    homeCategory: "Delivery",
+    homeTags: ["FlutterFlow", "Supabase", "Laravel"],
     descriptionMarkdown: `
 Приложение для курьеров, упрощающее процесс доставки товаров из darkstore до клиента. Четкий пошаговый алгоритм исключает путаницу и пропуск важных действий.
 
@@ -202,9 +226,17 @@ export const projects: Project[] = [
     ),
   },
   {
+    order: 4,
+    isOnHome: true,
     slug: "e-dy-picking",
     title: "Аналог Самоката: сборщикам",
     category: "Электронная коммерция / Доставка",
+    homeTitle: "Сборка заказов",
+    homeIconPath: "/images/svg_icons/box.svg",
+    homeIconBg: "#EA570F",
+    homeDescription: "Внутренний инструмент для сборщиков склада.",
+    homeCategory: "Operations",
+    homeTags: ["FlutterFlow", "Supabase", "Laravel"],
     descriptionMarkdown: `
 Внутреннее приложение для сотрудников darkstore, обеспечивающее быструю и безошибочную сборку товаров.
 
@@ -233,9 +265,17 @@ export const projects: Project[] = [
     ),
   },
   {
+    order: 5,
+    isOnHome: false,
     slug: "freight-transportation",
     title: "Грузовые перевозки",
     category: "Логистика / Грузоперевозки",
+    homeTitle: "Грузоперевозки",
+    homeIconPath: "/images/svg_icons/delivery_truck_speed.svg",
+    homeIconBg: "#3B608F",
+    homeDescription: "Поиск и выполнение заказов для водителей грузовиков.",
+    homeCategory: "Logistics",
+    homeTags: ["FlutterFlow", "1C", "B2B"],
     descriptionMarkdown: `
 Приложение для водителей грузовиков, которое упрощает поиск и выполнение заказов на перевозки. Позволяет быстро находить подходящие грузы, просматривать маршруты и управлять выполнением задач.
 
@@ -261,9 +301,17 @@ export const projects: Project[] = [
     ),
   },
   {
+    order: 6,
+    isOnHome: false,
     slug: "financal-tracker",
     title: "Финансовый трекер: учет доходов и расходов",
     category: "Финансы",
+    homeTitle: "Учет доходов",
+    homeIconPath: "/images/svg_icons/payments.svg",
+    homeIconBg: "#33618D",
+    homeDescription: "Трекер доходов, расходов и финансовой аналитики.",
+    homeCategory: "Finance",
+    homeTags: ["FlutterFlow", "Supabase", "Analytics"],
     descriptionMarkdown: `
 Приложение для учета пожертвований и расходов духовной организации с детальной аналитикой.
 
@@ -290,8 +338,108 @@ export const projects: Project[] = [
       "Финансовый трекер",
     ),
   },
+  {
+    order: 7,
+    isOnHome: false,
+    slug: "ev-clients",
+    title: "Зарядка электрокаров: для клиентов",
+    category: "Электромобили / Мобильная зарядка",
+    homeTitle: "EV клиенты",
+    homeIconPath: "/images/svg_icons/electric_bolt.svg",
+    homeIconBg: "#3E7C75",
+    homeDescription: "Клиентское приложение для заказа мобильной зарядки.",
+    homeCategory: "EV Charging",
+    homeTags: ["FlutterFlow", "Supabase", "Maps"],
+    descriptionMarkdown: `
+Клиентское мобильное приложение, являющееся частью экосистемы управления зарядкой электромобилей, включающей два мобильных приложения, десктопное приложение и OCPP-брокер для контроля зарядных станций. Приложение реализует полный цикл заказа мобильной зарядки с интеграцией геолокации, мониторинга и backend-сервисов. Backend построен на Supabase (PostgreSQL, Edge Functions, RPC-функции, Cron), с активным использованием всех ключевых возможностей платформы.
+
+## Основные функции
+
+- Авторизация по номеру телефона через SMS (OTP)
+- Многошаговая форма оформления заказа (время, локация, параметры зарядки)
+- Отслеживание статуса заказа и движения техника в реальном времени
+- Интеграция с картами и геолокацией
+- Фотофиксация состояния автомобиля до и после выполнения услуги
+- Уведомления о смене статусов заказа
+- Взаимодействие с backend API и системой управления зарядкой
+
+## Backend
+
+- PostgreSQL как основная БД
+- Edge Functions для серверной логики и обработки событий
+- RPC-функции для сложных операций и оптимизации запросов
+- Cron-задачи для фоновых процессов и автоматизации
+- Реалтайм-обновления статусов заказов
+    `.trim(),
+    stack: "Backend: Supabase (PostgreSQL, Edge Functions, RPC, Cron)\nFrontend: FlutterFlow",
+    demoAccessHTML: placeholderDemoAccessHTML,
+    screenshots: createScreenshots(
+      "ev-clients",
+      [
+        "ev-home.webp",
+        "ev-map.webp",
+        "ev-orders.webp",
+        "ev-photos.webp",
+      ],
+      "Зарядка электрокаров: для клиентов",
+    ),
+  },
+  {
+    order: 8,
+    isOnHome: false,
+    slug: "ev-technicians",
+    title: "Зарядка электрокаров: для техников",
+    category: "Электромобили / Мобильная зарядка",
+    homeTitle: "EV техники",
+    homeIconPath: "/images/svg_icons/recent_patient.svg",
+    homeIconBg: "#3E7C75",
+    homeDescription: "Рабочее приложение техника с маршрутом и статусами.",
+    homeCategory: "Field Service",
+    homeTags: ["FlutterFlow", "Supabase", "Realtime"],
+    descriptionMarkdown: `
+Мобильное приложение для техника, являющееся частью экосистемы управления зарядкой электромобилей, включающей клиентское приложение, десктопное решение и OCPP-брокер. Приложение обеспечивает управление заказами и выполнение маршрута с поэтапной передачей статусов в backend в реальном времени. Реализована интеграция с навигацией и системой мониторинга выполнения зарядки.
+
+## Основные функции
+
+- Просмотр доступных заказов и принятие в работу
+- Управление маршрутом и последовательностью точек
+- Передача статусов выполнения заказа (выезд с базы, прибытие, начало зарядки, процесс, завершение)
+- Отслеживание текущего состояния задачи с синхронизацией с backend
+- Интеграция с навигацией через Яндекс.Карты
+- Работа с геолокацией
+- Обновление данных в реальном времени
+
+## Backend
+
+- Интеграция с backend на Supabase
+- Реалтайм-синхронизация статусов заказов
+- Использование API для управления заказами и маршрутами
+- Обработка состояний (state management) для жизненного цикла заказа
+    `.trim(),
+    stack: "Backend: Supabase\nFrontend: FlutterFlow",
+    demoAccessHTML: placeholderDemoAccessHTML,
+    screenshots: createScreenshots(
+      "ev-technicians",
+      [
+        "evt-home.webp",
+        "evt-route.webp",
+        "evt-route2.webp",
+      ],
+      "Зарядка электрокаров: для техников",
+    ),
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);
+}
+
+export function getSortedProjects() {
+  return [...projects].sort((firstProject, secondProject) => {
+    return firstProject.order - secondProject.order;
+  });
+}
+
+export function getHomeProjects() {
+  return getSortedProjects().filter((project) => project.isOnHome);
 }
