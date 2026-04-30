@@ -32,7 +32,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SiteMenu />
-        {children}
+        <div className="lg:pl-[min(22.5rem,30vw)]">{children}</div>
       </body>
     </html>
   );

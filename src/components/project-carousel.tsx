@@ -88,15 +88,15 @@ export function ProjectCarousel({
   }
 
   return (
-    <section className="-mx-4 space-y-4 sm:-mx-6 lg:mx-0">
-      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:px-6 lg:px-0 [&::-webkit-scrollbar]:hidden">
+    <section className="space-y-4">
+      <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:mx-0 lg:gap-5 lg:px-0 [&::-webkit-scrollbar]:hidden">
         {screenshots.map((screenshot, index) => (
           <button
             key={screenshot.src}
             type="button"
             onClick={() => openLightbox(index)}
             className={[
-              "group relative block h-[300px] w-[135px] min-w-[135px] snap-center rounded-[2rem] bg-transparent transition-transform",
+              "group relative block h-[300px] w-[135px] min-w-[135px] snap-center rounded-[2rem] bg-transparent transition-transform lg:h-[420px] lg:w-[204px] lg:min-w-[204px]",
               activeIndex === index ? "scale-100" : "scale-[0.985]",
             ].join(" ")}
             aria-label={`Открыть скриншот ${index + 1} проекта ${title}`}
@@ -106,7 +106,7 @@ export function ProjectCarousel({
                 src={screenshot.src}
                 alt={screenshot.alt}
                 fill
-                sizes="135px"
+                sizes="(min-width: 1024px) 204px, 135px"
                 className="object-cover"
                 priority={index === 0}
               />
@@ -168,7 +168,7 @@ export function ProjectCarousel({
             </button>
 
             <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[#140f1d] shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
-              <div className="relative aspect-[9/16] max-h-[82vh] min-h-[420px] w-full">
+              <div className="relative aspect-[9/16] max-h-[82vh] min-h-[420px] w-full lg:min-h-[720px]">
                 <Image
                   src={screenshots[lightboxIndex].src}
                   alt={screenshots[lightboxIndex].alt}
