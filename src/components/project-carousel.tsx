@@ -88,8 +88,8 @@ export function ProjectCarousel({
   }
 
   return (
-    <section className="space-y-4">
-      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <section className="-mx-4 space-y-4 sm:-mx-6 lg:mx-0">
+      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:px-6 lg:px-0 [&::-webkit-scrollbar]:hidden">
         {screenshots.map((screenshot, index) => (
           <button
             key={screenshot.src}
@@ -101,7 +101,7 @@ export function ProjectCarousel({
             ].join(" ")}
             aria-label={`Открыть скриншот ${index + 1} проекта ${title}`}
           >
-            <div className="relative h-full w-full overflow-hidden rounded-[8px] border-[4px] border-[#9fa3aa] bg-white shadow-[0_18px_45px_rgba(56,40,68,0.12)]">
+            <div className="relative h-full w-full overflow-hidden rounded-[8px] border-[3px] border-[#9fa3aa] bg-transparent">
               <Image
                 src={screenshot.src}
                 alt={screenshot.alt}
@@ -112,23 +112,6 @@ export function ProjectCarousel({
               />
             </div>
           </button>
-        ))}
-      </div>
-
-      <div className="flex justify-center gap-2">
-        {screenshots.map((screenshot, index) => (
-          <button
-            key={`${screenshot.src}-dot`}
-            type="button"
-            onClick={() => setActiveIndex(index)}
-            className={[
-              "h-2.5 rounded-full transition-all",
-              activeIndex === index
-                ? "w-8 bg-[#7a5af8]"
-                : "w-2.5 bg-[#d9d1eb]",
-            ].join(" ")}
-            aria-label={`Переключиться на скриншот ${index + 1}`}
-          />
         ))}
       </div>
 

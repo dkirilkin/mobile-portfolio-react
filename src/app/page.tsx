@@ -1,80 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { projects } from "@/data/projects";
+import { ProjectList } from "@/components/project-list";
+import { getHomeProjects } from "@/data/projects";
 
-type HomeIcon = "bag" | "cloud" | "coins" | "box" | "bike" | "truck";
-
-type HomeProjectCard = {
-  accent: string;
-  icon: HomeIcon;
-  iconColor: string;
-  title: string;
-};
-
-const homeProjectOrder = [
-  "e-commerce",
-  "cognitivy",
-  "financal-tracker",
-  "e-dy-picking",
-  "e-dy-delivery",
-  "freight-transportation",
-] as const;
-
-const homeProjectCards: Record<string, HomeProjectCard> = {
-  "e-commerce": {
-    title: "Онлайн покупки",
-    accent: "#6F5BA6",
-    icon: "bag",
-    iconColor: "#FFF9F1",
-  },
-  cognitivy: {
-    title: "Cognitivy (психология)",
-    accent: "#0B63DE",
-    icon: "cloud",
-    iconColor: "#FFF9F1",
-  },
-  "financal-tracker": {
-    title: "Учет доходов и расходов",
-    accent: "#8B6173",
-    icon: "coins",
-    iconColor: "#FFF9F1",
-  },
-  "e-dy-picking": {
-    title: "Аналог Самоката: сборка заказов",
-    accent: "#E6DCFF",
-    icon: "box",
-    iconColor: "#5C4A8D",
-  },
-  "e-dy-delivery": {
-    title: "Аналог Самоката: курьеры",
-    accent: "#DDD4FB",
-    icon: "bike",
-    iconColor: "#5C4A8D",
-  },
-  "freight-transportation": {
-    title: "Грузовые перевозки",
-    accent: "#FFD9E7",
-    icon: "truck",
-    iconColor: "#7C5368",
-  },
-};
-
-const homeProjects = homeProjectOrder
-  .map((slug) => {
-    const project = projects.find((entry) => entry.slug === slug);
-    const card = homeProjectCards[slug];
-
-    if (!project || !card) {
-      return null;
-    }
-
-    return {
-      ...project,
-      home: card,
-    };
-  })
-  .filter((project) => project !== null);
+const homeProjects = getHomeProjects();
 
 const frontendStack = ["FlutterFlow", "Webflow"];
 const backendStack = ["Supabase", "Firebase", "Xano", "n8n"];
@@ -156,82 +86,6 @@ function TelegramIcon() {
   );
 }
 
-function ProjectIcon({
-  icon,
-  color,
-}: {
-  icon: HomeIcon;
-  color: string;
-}) {
-  const sharedProps = {
-    "aria-hidden": true,
-    className: "h-12 w-12",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    strokeWidth: 1.9,
-    viewBox: "0 0 24 24",
-  };
-
-  switch (icon) {
-    case "bag":
-      return (
-        <svg {...sharedProps}>
-          <path d="M6 8h12a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1Z" />
-          <path d="M9 9V7a3 3 0 0 1 6 0v2" />
-        </svg>
-      );
-    case "cloud":
-      return (
-        <svg {...sharedProps}>
-          <path d="M8 18a4 4 0 0 1-.9-7.9 5.5 5.5 0 0 1 10.46-1.38A4.3 4.3 0 1 1 18 18H8Z" />
-          <circle cx="6.2" cy="19.3" r="1.1" fill={color} stroke="none" />
-          <circle cx="4.7" cy="21.4" r=".85" fill={color} stroke="none" />
-        </svg>
-      );
-    case "coins":
-      return (
-        <svg {...sharedProps}>
-          <circle cx="12" cy="12" r="8" />
-          <path d="M14.8 9.5c-.4-.82-1.32-1.35-2.65-1.35-1.57 0-2.65.78-2.65 2.04 0 1.1.82 1.73 2.39 2.11 1.6.39 2.07.74 2.07 1.52 0 .84-.7 1.43-1.92 1.43-1.22 0-2.04-.48-2.64-1.46" />
-          <path d="M12 7v10" />
-        </svg>
-      );
-    case "box":
-      return (
-        <svg {...sharedProps}>
-          <path d="M5.5 8.5h13v10a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 18.5v-10Z" />
-          <path d="M5.5 10.5h13" />
-          <path d="M9 6.5h6" />
-        </svg>
-      );
-    case "bike":
-      return (
-        <svg {...sharedProps}>
-          <circle cx="7" cy="16.5" r="3" />
-          <circle cx="17" cy="16.5" r="3" />
-          <path d="M9.5 16.5 12 11h3.5" />
-          <path d="m10.8 9.5 1.2 1.5" />
-          <path d="M12 11H9" />
-          <path d="M14.5 16.5 12 11" />
-        </svg>
-      );
-    case "truck":
-      return (
-        <svg {...sharedProps}>
-          <path d="M4 8h10v7H4z" />
-          <path d="M14 11h3l2 2.5V15h-5" />
-          <path d="M6.5 8V6.5" />
-          <path d="M9 8V6.5" />
-          <path d="M11.5 8V6.5" />
-          <circle cx="8" cy="17.5" r="1.8" />
-          <circle cx="17" cy="17.5" r="1.8" />
-        </svg>
-      );
-  }
-}
-
 function PlatformChip({
   icon,
   label,
@@ -296,28 +150,14 @@ export default function Home() {
           Портфолио
         </h2>
 
-        <div className="mt-6 grid grid-cols-3 gap-x-3 gap-y-6">
-          {homeProjects.map((project) => (
-            <Link
-              key={project.slug}
-              href={`/projects/${project.slug}`}
-              className="group block"
-            >
-              <div
-                className="flex aspect-square w-full items-center justify-center rounded-[26px] shadow-[0_12px_30px_rgba(74,57,103,0.08)] transition duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_18px_34px_rgba(74,57,103,0.14)]"
-                style={{ backgroundColor: project.home.accent }}
-              >
-                <ProjectIcon
-                  icon={project.home.icon}
-                  color={project.home.iconColor}
-                />
-              </div>
-              <p className="mt-3 text-center text-[1rem] leading-[1.25] text-[#2f2738]">
-                {project.home.title}
-              </p>
-            </Link>
-          ))}
-        </div>
+        <ProjectList projects={homeProjects} />
+
+        <Link
+          href="/projects"
+          className="mt-6 inline-flex h-14 w-full items-center justify-center rounded-2xl bg-[#625690] px-6 text-[1rem] font-medium leading-6 text-white transition duration-200 hover:bg-[#564a82]"
+        >
+          Все проекты
+        </Link>
       </section>
 
       <section className="border-t border-[#d8d0d7] px-4 pb-8 pt-9">
@@ -379,8 +219,8 @@ export default function Home() {
             Работал в найме
           </h3>
           <p className="mt-2 text-[1.08rem] leading-8 text-[#2f2738]">
-            Норникель, Астерос, X5 Group и др. - на различных ролях в
-            IT-проектах (аналитик, project-менеджер).
+            Норникель, Астерос, X5 Group и др. на различных ролях в IT-проектах
+            (аналитик, project-менеджер).
           </p>
         </div>
 
