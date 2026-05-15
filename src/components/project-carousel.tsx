@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+import styles from "./project-carousel.module.css";
 
 type ProjectCarouselProps = {
   screenshots: {
@@ -11,6 +13,57 @@ type ProjectCarouselProps = {
   title: string;
 };
 
+function CloseIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={styles.icon}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeWidth="2.2"
+    >
+      <path d="M6 6L18 18" />
+      <path d="M18 6L6 18" />
+    </svg>
+  );
+}
+
+function PreviousIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={styles.icon}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <path d="M15 18L9 12L15 6" />
+    </svg>
+  );
+}
+
+function NextIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={styles.icon}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <path d="M9 18L15 12L9 6" />
+    </svg>
+  );
+}
+
 export function ProjectCarousel({
   screenshots,
   title,
@@ -19,6 +72,27 @@ export function ProjectCarousel({
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const hasLightboxOpen = lightboxIndex !== null;
+
+  const openLightbox = (index: number) => {
+    setActiveIndex(index);
+    setLightboxIndex(index);
+  };
+
+  const moveLightbox = useCallback(
+    (step: number) => {
+      setLightboxIndex((current) => {
+        if (current === null) {
+          return current;
+        }
+
+        const nextIndex =
+          (current + step + screenshots.length) % screenshots.length;
+        setActiveIndex(nextIndex);
+        return nextIndex;
+      });
+    },
+    [screenshots.length],
+  );
 
   useEffect(() => {
     if (!hasLightboxOpen) {
@@ -34,23 +108,11 @@ export function ProjectCarousel({
       }
 
       if (event.key === "ArrowLeft") {
-        setLightboxIndex((current) => {
-          if (current === null) {
-            return current;
-          }
-
-          return current === 0 ? screenshots.length - 1 : current - 1;
-        });
+        moveLightbox(-1);
       }
 
       if (event.key === "ArrowRight") {
-        setLightboxIndex((current) => {
-          if (current === null) {
-            return current;
-          }
-
-          return current === screenshots.length - 1 ? 0 : current + 1;
-        });
+        moveLightbox(1);
       }
     };
 
@@ -60,56 +122,32 @@ export function ProjectCarousel({
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [hasLightboxOpen, screenshots.length]);
-
-  function openLightbox(index: number) {
-    setActiveIndex(index);
-    setLightboxIndex(index);
-  }
-
-  function showPrevious() {
-    setLightboxIndex((current) => {
-      if (current === null) {
-        return current;
-      }
-
-      return current === 0 ? screenshots.length - 1 : current - 1;
-    });
-  }
-
-  function showNext() {
-    setLightboxIndex((current) => {
-      if (current === null) {
-        return current;
-      }
-
-      return current === screenshots.length - 1 ? 0 : current + 1;
-    });
-  }
+  }, [hasLightboxOpen, moveLightbox, screenshots.length]);
 
   return (
-    <section className="space-y-4">
-      <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:-mx-6 sm:px-6 lg:mx-0 lg:gap-5 lg:px-0 [&::-webkit-scrollbar]:hidden">
+    <section className={styles.root}>
+      <div className={styles.rail}>
         {screenshots.map((screenshot, index) => (
           <button
             key={screenshot.src}
             type="button"
             onClick={() => openLightbox(index)}
-            className={[
-              "group relative block h-[300px] w-[135px] min-w-[135px] snap-center rounded-[2rem] bg-transparent transition-transform lg:h-[420px] lg:w-[204px] lg:min-w-[204px]",
-              activeIndex === index ? "scale-100" : "scale-[0.985]",
-            ].join(" ")}
+            className={[styles.slide, activeIndex === index ? styles.slideActive : ""]
+              .join(" ")
+              .trim()}
             aria-label={`Открыть скриншот ${index + 1} проекта ${title}`}
           >
-            <div className="relative h-full w-full overflow-hidden rounded-[8px] border-[3px] border-[#9fa3aa] bg-transparent">
-              <Image
-                src={screenshot.src}
-                alt={screenshot.alt}
-                fill
-                sizes="(min-width: 1024px) 204px, 135px"
-                className="object-cover"
-                priority={index === 0}
-              />
+            <div className={styles.frame}>
+              <div className={styles.screen}>
+                <Image
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  fill
+                  sizes="(min-width: 1024px) 204px, 152px"
+                  className={styles.image}
+                  priority={index === 0}
+                />
+              </div>
             </div>
           </button>
         ))}
@@ -117,87 +155,53 @@ export function ProjectCarousel({
 
       {hasLightboxOpen ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(20,14,30,0.82)] px-3 py-6 backdrop-blur-sm"
+          className={styles.lightbox}
           role="dialog"
           aria-modal="true"
           aria-label={`Просмотр изображений проекта ${title}`}
           onClick={() => setLightboxIndex(null)}
         >
-          <div
-            className="relative flex w-full max-w-5xl items-center justify-center"
-            onClick={(event) => event.stopPropagation()}
-          >
+          <div className={styles.lightboxInner} onClick={(event) => event.stopPropagation()}>
             <button
               type="button"
               onClick={() => setLightboxIndex(null)}
-              className="absolute right-3 top-3 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#281f36] shadow-[0_12px_30px_rgba(0,0,0,0.28)] ring-1 ring-black/8 transition hover:bg-[#f6f3fb]"
+              className={[styles.control, styles.closeControl].join(" ")}
               aria-label="Закрыть просмотр"
             >
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeWidth="2.25"
-              >
-                <path d="M6 6L18 18" />
-                <path d="M18 6L6 18" />
-              </svg>
+              <CloseIcon />
             </button>
 
             <button
               type="button"
-              onClick={showPrevious}
-              className="absolute left-2 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/14 text-white ring-1 ring-white/14 backdrop-blur-md transition hover:bg-white/24 sm:left-4"
+              onClick={() => moveLightbox(-1)}
+              className={[styles.control, styles.sideControl, styles.leftControl].join(" ")}
               aria-label="Предыдущее изображение"
             >
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              >
-                <path d="M15 18L9 12L15 6" />
-              </svg>
+              <PreviousIcon />
             </button>
 
-            <div className="relative w-full overflow-hidden rounded-[2rem] border border-white/12 bg-[#140f1d] shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
-              <div className="relative aspect-[9/16] max-h-[82vh] min-h-[420px] w-full lg:min-h-[720px]">
+            <div className={styles.lightboxFrame}>
+              <div className={styles.counter}>
+                {lightboxIndex + 1} / {screenshots.length}
+              </div>
+              <div className={styles.lightboxScreen}>
                 <Image
                   src={screenshots[lightboxIndex].src}
                   alt={screenshots[lightboxIndex].alt}
                   fill
                   sizes="100vw"
-                  className="object-cover"
-                  priority
+                  className={styles.image}
                 />
               </div>
             </div>
 
             <button
               type="button"
-              onClick={showNext}
-              className="absolute right-2 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/14 text-white ring-1 ring-white/14 backdrop-blur-md transition hover:bg-white/24 sm:right-4"
+              onClick={() => moveLightbox(1)}
+              className={[styles.control, styles.sideControl, styles.rightControl].join(" ")}
               aria-label="Следующее изображение"
             >
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-              >
-                <path d="M9 18L15 12L9 6" />
-              </svg>
+              <NextIcon />
             </button>
           </div>
         </div>

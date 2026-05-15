@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { getSortedProjects } from "@/data/projects";
+
+import styles from "./site-menu.module.css";
 
 const menuProjects = getSortedProjects();
 
@@ -13,7 +15,7 @@ function MenuIcon({ open }: { open: boolean }) {
     <svg
       aria-hidden="true"
       viewBox="0 0 24 24"
-      className="h-5 w-5"
+      className={styles.menuIcon}
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
@@ -39,16 +41,59 @@ function MenuIcon({ open }: { open: boolean }) {
 export function SiteMenu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const isProjectPage = pathname.startsWith("/projects/");
 
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      setIsOpen(false);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", isOpen);
+
+    return () => {
+      document.body.classList.remove("menu-open");
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen]);
+
+  const rootLinkClass = (selected: boolean) =>
+    [styles.navLink, selected ? styles.navLinkSelected : ""].join(" ").trim();
+
+  const projectLinkClass = (selected: boolean) =>
+    [styles.projectLink, selected ? styles.projectLinkSelected : ""]
+      .join(" ")
+      .trim();
 
   return (
     <>
       <button
         type="button"
         onClick={() => setIsOpen((currentState) => !currentState)}
-        className="fixed right-4 top-4 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d8d0d7] bg-white text-[#231d2a] shadow-[0_6px_18px_rgba(55,45,72,0.08)] sm:right-6 sm:top-6 lg:hidden"
+        className={styles.menuButton}
         aria-expanded={isOpen}
         aria-controls="site-mobile-menu"
         aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
@@ -56,42 +101,40 @@ export function SiteMenu() {
         <MenuIcon open={isOpen} />
       </button>
 
-      {isOpen ? (
-        <div
-          className="fixed inset-0 z-50 bg-[#231d2a]/28 lg:hidden"
-          onClick={closeMenu}
-        />
-      ) : null}
+      <button
+        type="button"
+        className={[styles.scrim, isOpen ? styles.scrimVisible : ""].join(" ")}
+        onClick={closeMenu}
+        aria-label="Закрыть меню"
+        tabIndex={isOpen ? 0 : -1}
+      />
 
       <aside
         id="site-mobile-menu"
-        className={`fixed right-0 top-0 z-50 h-full w-[min(22rem,88vw)] overflow-y-auto border-l border-[#ddd5e1] bg-[#fcf8fc] px-5 py-6 transition-transform duration-200 lg:left-0 lg:right-auto lg:z-30 lg:w-[min(22.5rem,30vw)] lg:max-w-[360px] lg:translate-x-0 lg:border-l-0 lg:border-r ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        aria-hidden={!isOpen && !isProjectPage}
+        className={[styles.drawer, isOpen ? styles.drawerOpen : ""].join(" ")}
+        aria-hidden={!isOpen}
       >
-        <div className="flex items-center justify-between lg:justify-start">
-          <p className="text-[1rem] font-semibold text-[#231d2a]">Меню</p>
+        <div className={styles.drawerHeader}>
+          <div>
+            <p className="md3-eyebrow">Навигация</p>
+            <p className={styles.drawerTitle}>Портфолио</p>
+          </div>
           <button
             type="button"
             onClick={closeMenu}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#d8d0d7] bg-white text-[#231d2a] lg:hidden"
+            className={styles.closeButton}
             aria-label="Закрыть меню"
           >
             <MenuIcon open />
           </button>
         </div>
 
-        <nav className="mt-6" aria-label="Основная навигация">
-          <div className="space-y-1">
+        <nav className={styles.nav} aria-label="Основная навигация">
+          <div className={styles.primaryLinks}>
             <Link
               href="/"
               onClick={closeMenu}
-              className={`block rounded-2xl px-4 py-3 text-[1rem] leading-6 ${
-                pathname === "/"
-                  ? "bg-[#ece3ff] font-semibold text-[#4f3a86]"
-                  : "text-[#231d2a]"
-              }`}
+              className={rootLinkClass(pathname === "/")}
             >
               Главная
             </Link>
@@ -99,18 +142,16 @@ export function SiteMenu() {
             <Link
               href="/projects"
               onClick={closeMenu}
-              className={`block rounded-2xl px-4 py-3 text-[1rem] leading-6 ${
-                pathname === "/projects" || isProjectPage
-                  ? "bg-[#ece3ff] font-semibold text-[#4f3a86]"
-                  : "text-[#231d2a]"
-              }`}
+              className={rootLinkClass(
+                pathname === "/projects" || pathname.startsWith("/projects/"),
+              )}
             >
               Проекты
             </Link>
           </div>
 
-          <div className="mt-4 pl-4">
-            <div className="space-y-1 border-l border-[#ddd5e1] pl-4">
+          <div className={styles.projectGroup}>
+            <div className={styles.projectList}>
               {menuProjects.map((project) => {
                 const projectHref = `/projects/${project.slug}`;
                 const isActive = pathname === projectHref;
@@ -120,11 +161,7 @@ export function SiteMenu() {
                     key={project.slug}
                     href={projectHref}
                     onClick={closeMenu}
-                    className={`block rounded-xl px-3 py-2 text-[0.95rem] leading-5 ${
-                      isActive
-                        ? "bg-[#ece3ff] font-medium text-[#4f3a86]"
-                        : "text-[#5c5368]"
-                    }`}
+                    className={projectLinkClass(isActive)}
                   >
                     {project.homeTitle}
                   </Link>

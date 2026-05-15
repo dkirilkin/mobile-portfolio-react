@@ -1,0 +1,266 @@
+.page {
+  color: var(--md-sys-color-on-surface);
+  padding-top: 0;
+}
+
+.heroContainer,
+.projectsSection,
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsSection,
+.aboutSection {
+  margin-top: 2rem;
+}
+
+.heroBand {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  color: #fff7ff;
+  background:
+    radial-gradient(circle at top left, rgba(224, 204, 255, 0.38) 0%, transparent 34%),
+    radial-gradient(circle at 78% 20%, rgba(133, 101, 214, 0.44) 0%, transparent 26%),
+    linear-gradient(135deg, #24173a 0%, #33204d 48%, #1a1226 100%);
+}
+
+.heroContainer {
+  padding: 4.5rem 1rem 1.25rem;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heroTitle {
+  max-width: 10ch;
+  font-size: clamp(2.9rem, 13vw, 4.8rem);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.heroDescription {
+  max-width: 34rem;
+  color: rgba(247, 238, 248, 0.82);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.platformRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.platformChip {
+  min-height: 2.625rem;
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.platformIcon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.heroButtonPrimary,
+.heroButtonSecondary {
+  min-width: 13rem;
+}
+
+.heroButtonPrimary {
+  box-shadow: 0 16px 32px rgba(101, 85, 143, 0.3);
+}
+
+.heroButtonSecondary {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: white;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.heroButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.heroMarqueeWrap {
+  min-width: 0;
+  padding: 0.75rem 0;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.sectionCta {
+  width: fit-content;
+  margin-top: 1.5rem;
+}
+
+.profileCard,
+.detailCard {
+  padding: 1.25rem;
+}
+
+.profileRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profileImage {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+  box-shadow: var(--md-sys-elevation-level2);
+}
+
+.profileCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  min-width: 0;
+}
+
+.profileTitle,
+.cardTitle {
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: var(--md-sys-typescale-title-large-weight);
+  line-height: var(--md-sys-typescale-title-large-line-height);
+  letter-spacing: var(--md-sys-typescale-title-large-tracking);
+}
+
+.profileName {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.detailGrid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.stackGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stackTitle,
+.contactLabel {
+  color: var(--md-sys-color-on-surface);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.stackList,
+.cardText,
+.contactValue {
+  margin-top: 0.5rem;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+}
+
+.contactList {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.telegramButton {
+  width: fit-content;
+  margin-top: 1.5rem;
+}
+
+.telegramIcon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+}
+
+@media (min-width: 720px) {
+  .heroContainer,
+  .profileCard,
+  .detailCard {
+    padding: 1.5rem;
+  }
+
+  .heroContainer {
+    padding-top: 5rem;
+  }
+
+  .heroActions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .stackGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1080px) {
+  .heroContainer {
+    padding-top: 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .heroContent {
+    gap: 1.25rem;
+    padding-right: 1rem;
+  }
+
+  .heroMarqueeWrap {
+    padding: 1rem 0;
+  }
+
+  .heroTitle {
+    max-width: 9ch;
+    font-size: clamp(4.5rem, 5vw, 6rem);
+  }
+
+  .heroDescription {
+    font-size: 1.0625rem;
+  }
+
+  .detailGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
