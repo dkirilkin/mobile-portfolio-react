@@ -1,53 +1,69 @@
 import ReactMarkdown from "react-markdown";
 
+import styles from "./markdown-content.module.css";
+
 type MarkdownContentProps = {
   content: string;
   className?: string;
+  variant?: "default" | "project-detail";
 };
+
+function joinClassNames(...classNames: Array<string | false | null | undefined>) {
+  return classNames.filter(Boolean).join(" ");
+}
 
 export function MarkdownContent({
   content,
   className,
+  variant = "default",
 }: MarkdownContentProps) {
+  const isProjectDetail = variant === "project-detail";
+
   return (
-    <div className={className}>
+    <div className={joinClassNames(styles.root, className)}>
       <ReactMarkdown
         components={{
           h2: ({ children }) => (
-            <h2 className="mt-6 text-xl font-semibold first:mt-0">{children}</h2>
+            <h2
+              className={joinClassNames(
+                styles.h2,
+                isProjectDetail && styles.h2ProjectDetail,
+              )}
+            >
+              {children}
+            </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="mt-5 text-lg font-semibold first:mt-0">{children}</h3>
+            <h3 className={joinClassNames(styles.h3, isProjectDetail && styles.h3ProjectDetail)}>
+              {children}
+            </h3>
           ),
           p: ({ children }) => (
-            <p className="mt-3 text-base leading-8 text-[#4f455f] first:mt-0">
+            <p className={joinClassNames(styles.p, isProjectDetail && styles.pProjectDetail)}>
               {children}
             </p>
           ),
           ul: ({ children }) => (
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-8 text-[#4f455f] marker:text-[#7a5af8]">
+            <ul className={joinClassNames(styles.ul, isProjectDetail && styles.ulProjectDetail)}>
               {children}
             </ul>
           ),
           ol: ({ children }) => (
-            <ol className="mt-4 list-decimal space-y-2 pl-5 text-base leading-8 text-[#4f455f] marker:font-semibold marker:text-[#7a5af8]">
+            <ol className={joinClassNames(styles.ol, isProjectDetail && styles.olProjectDetail)}>
               {children}
             </ol>
           ),
-          li: ({ children }) => <li>{children}</li>,
-          strong: ({ children }) => (
-            <strong className="font-semibold text-[#281f36]">{children}</strong>
-          ),
-          code: ({ children }) => (
-            <code className="rounded-md bg-[#f2ebff] px-1.5 py-0.5 text-[0.95em] text-[#5e34d0]">
+          li: ({ children }) => (
+            <li className={joinClassNames(styles.li, isProjectDetail && styles.liProjectDetail)}>
               {children}
-            </code>
+            </li>
           ),
+          strong: ({ children }) => (
+            <strong className={styles.strong}>{children}</strong>
+          ),
+          code: ({ children }) => <code className={styles.code}>{children}</code>,
           a: ({ children, href }) => (
-            <a
-              href={href}
-              className="font-medium text-[#5e34d0] underline decoration-[#c7b5ff] underline-offset-4"
-            >
+            <a href={href} className={styles.link}>
               {children}
             </a>
           ),

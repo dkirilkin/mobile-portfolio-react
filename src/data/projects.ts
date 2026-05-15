@@ -1,3 +1,4 @@
+import { TELEGRAM_URL } from "@/constants/contact";
 import { Project } from "@/types/project";
 
 function createScreenshots(
@@ -19,6 +20,32 @@ const placeholderDemoAccessHTML = `
     </p>
   </div>
 `.trim();
+
+const requestDemoAccessHTML = `
+  <div class="demo-section">
+    <h3 class="demo-heading">Демо-доступ</h3>
+    <p class="demo-meta">
+      Получите доступ к демонстрационной версии.
+    </p>
+    <div class="demo-actions">
+      <a
+        class="demo-button demo-button-filled"
+        href="${TELEGRAM_URL}"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span class="demo-button-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.47 4.34a1.6 1.6 0 0 0-1.68-.21L3.46 10.6a1.2 1.2 0 0 0 .07 2.25l3.75 1.24 1.47 4.56a1.2 1.2 0 0 0 2.03.48l2.09-2.14 3.97 3.03a1.6 1.6 0 0 0 2.55-.92l2.47-13.15a1.6 1.6 0 0 0-.39-1.61ZM9.3 13.66l8.2-6.27-6.54 7.28a.75.75 0 0 0-.18.33l-.65 2.78-.83-2.58a.75.75 0 0 0-.48-.49l-2.15-.71 10.83-4.16-8.35 5.39a.75.75 0 0 0 .2 1.43Z" />
+          </svg>
+        </span>
+        Запросить доступ
+      </a>
+    </div>
+  </div>
+`.trim();
+
+void placeholderDemoAccessHTML;
 
 const ecommerceDemoAccessHTML = `
   <div class="demo-section">
@@ -150,12 +177,12 @@ export const projects: Project[] = [
     ),
   },
   {
-    order: 2,
+    order: 4,
     isOnHome: true,
     slug: "cognitivy",
-    title: "Cognitivy",
+    title: "Cognitivy (психология)",
     category: "Психология / Саморазвитие",
-    homeTitle: "Cognitivy",
+    homeTitle: "Cognitivy (психология)",
     homeIconPath: "/images/svg_icons/thought.svg",
     homeIconBg: "#0055D5",
     homeDescription: "Когнитивный дневник для анализа эмоций и мыслей.",
@@ -172,7 +199,7 @@ export const projects: Project[] = [
 - Обучающий тур и примеры
     `.trim(),
     stack: "Backend: Supabase, Xano\nFrontend: FlutterFlow",
-    demoAccessHTML: placeholderDemoAccessHTML,
+    demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "cognitivy",
       [
@@ -187,12 +214,12 @@ export const projects: Project[] = [
     ),
   },
   {
-    order: 3,
+    order: 5,
     isOnHome: true,
     slug: "e-dy-delivery",
-    title: "Аналог Самоката: курьерам",
+    title: "Доставка товаров: для курьеров",
     category: "Электронная коммерция / Доставка",
-    homeTitle: "Курьеры",
+    homeTitle: "Аналог Самоката: курьерам",
     homeIconPath: "/images/svg_icons/pedal_bike.svg",
     homeIconBg: "#EA570F",
     homeDescription: "Пошаговое приложение для курьеров darkstore.",
@@ -210,7 +237,7 @@ export const projects: Project[] = [
 - Удобный интерфейс
     `.trim(),
     stack: "Backend: Supabase, PHP (Laravel)\nFrontend: FlutterFlow",
-    demoAccessHTML: placeholderDemoAccessHTML,
+    demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "e-dy-delivery",
       [
@@ -226,12 +253,12 @@ export const projects: Project[] = [
     ),
   },
   {
-    order: 4,
+    order: 6,
     isOnHome: true,
     slug: "e-dy-picking",
     title: "Аналог Самоката: сборщикам",
     category: "Электронная коммерция / Доставка",
-    homeTitle: "Сборка заказов",
+    homeTitle: "Аналог Самоката: сборщикам",
     homeIconPath: "/images/svg_icons/box.svg",
     homeIconBg: "#EA570F",
     homeDescription: "Внутренний инструмент для сборщиков склада.",
@@ -250,7 +277,7 @@ export const projects: Project[] = [
 - Авторизация
     `.trim(),
     stack: "Backend: Supabase, PHP (Laravel)\nFrontend: FlutterFlow",
-    demoAccessHTML: placeholderDemoAccessHTML,
+    demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "e-dy-picking",
       [
@@ -265,7 +292,7 @@ export const projects: Project[] = [
     ),
   },
   {
-    order: 5,
+    order: 8,
     isOnHome: false,
     slug: "freight-transportation",
     title: "Грузовые перевозки",
@@ -287,7 +314,7 @@ export const projects: Project[] = [
 - Авторизация и профиль
     `.trim(),
     stack: "Backend: 1C http-сервис\nFrontend: FlutterFlow",
-    demoAccessHTML: placeholderDemoAccessHTML,
+    demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "freight-transportation",
       [
@@ -301,15 +328,15 @@ export const projects: Project[] = [
     ),
   },
   {
-    order: 6,
+    order: 7,
     isOnHome: false,
     slug: "financal-tracker",
     title: "Финансовый трекер: учет доходов и расходов",
     category: "Финансы",
-    homeTitle: "Учет доходов",
+    homeTitle: "Финансовый трекер",
     homeIconPath: "/images/svg_icons/payments.svg",
     homeIconBg: "#33618D",
-    homeDescription: "Трекер доходов, расходов и финансовой аналитики.",
+    homeDescription: "Учет доходов и расходов, аналитика для духовной организации.",
     homeCategory: "Finance",
     homeTags: ["FlutterFlow", "Supabase", "Analytics"],
     descriptionMarkdown: `
@@ -323,7 +350,7 @@ export const projects: Project[] = [
 - Авторизация
     `.trim(),
     stack: "Backend: Supabase\nFrontend: FlutterFlow",
-    demoAccessHTML: placeholderDemoAccessHTML,
+    demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "financal-tracker",
       [
@@ -339,15 +366,15 @@ export const projects: Project[] = [
     ),
   },
   {
-    order: 7,
+    order: 2,
     isOnHome: false,
     slug: "ev-clients",
     title: "Зарядка электрокаров: для клиентов",
     category: "Электромобили / Мобильная зарядка",
-    homeTitle: "EV клиенты",
+    homeTitle: "Зарядка электромобилей: клиентам",
     homeIconPath: "/images/svg_icons/electric_bolt.svg",
     homeIconBg: "#3E7C75",
-    homeDescription: "Клиентское приложение для заказа мобильной зарядки.",
+    homeDescription: "Клиентское приложение для заказа мобильной зарядки авто.",
     homeCategory: "EV Charging",
     homeTags: ["FlutterFlow", "Supabase", "Maps"],
     descriptionMarkdown: `
@@ -372,7 +399,7 @@ export const projects: Project[] = [
 - Реалтайм-обновления статусов заказов
     `.trim(),
     stack: "Backend: Supabase (PostgreSQL, Edge Functions, RPC, Cron)\nFrontend: FlutterFlow",
-    demoAccessHTML: placeholderDemoAccessHTML,
+    demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "ev-clients",
       [
@@ -385,15 +412,15 @@ export const projects: Project[] = [
     ),
   },
   {
-    order: 8,
+    order: 3,
     isOnHome: false,
     slug: "ev-technicians",
     title: "Зарядка электрокаров: для техников",
     category: "Электромобили / Мобильная зарядка",
-    homeTitle: "EV техники",
+    homeTitle: "Зарядка электромобилей: техникам",
     homeIconPath: "/images/svg_icons/recent_patient.svg",
     homeIconBg: "#3E7C75",
-    homeDescription: "Рабочее приложение техника с маршрутом и статусами.",
+    homeDescription: "Приложение для техников с маршрутами, заказами и статусами.",
     homeCategory: "Field Service",
     homeTags: ["FlutterFlow", "Supabase", "Realtime"],
     descriptionMarkdown: `
@@ -417,7 +444,7 @@ export const projects: Project[] = [
 - Обработка состояний (state management) для жизненного цикла заказа
     `.trim(),
     stack: "Backend: Supabase\nFrontend: FlutterFlow",
-    demoAccessHTML: placeholderDemoAccessHTML,
+    demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "ev-technicians",
       [

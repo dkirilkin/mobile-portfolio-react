@@ -3,45 +3,68 @@ import Link from "next/link";
 
 import type { Project } from "@/types/project";
 
+import styles from "./project-list.module.css";
+
 type ProjectListProps = {
   projects: Project[];
 };
 
+function ArrowIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={styles.arrowIcon}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </svg>
+  );
+}
+
 export function ProjectList({ projects }: ProjectListProps) {
   return (
-    <div className="mt-6 divide-y divide-[#d2cbd3]">
+    <ul className={styles.list}>
       {projects.map((project) => (
-        <Link
-          key={project.slug}
-          href={`/projects/${project.slug}`}
-          className="group flex items-start gap-4 px-1 py-4 transition-colors duration-200 hover:bg-white/30"
-          aria-label={`${project.homeTitle}. ${project.homeCategory}. ${project.homeDescription}`}
-          title={project.homeDescription}
-        >
-          <div
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl transition duration-200 group-hover:scale-[1.03]"
-            style={{ backgroundColor: project.homeIconBg }}
+        <li key={project.slug} className={styles.row}>
+          <Link
+            href={`/projects/${project.slug}`}
+            className={styles.item}
+            aria-label={`${project.homeTitle}. ${project.homeCategory}. ${project.homeDescription}`}
+            title={project.homeDescription}
           >
-            <Image
-              src={project.homeIconPath}
-              alt=""
-              aria-hidden="true"
-              width={28}
-              height={28}
-              className="h-7 w-7"
-            />
-          </div>
+            <div className={styles.itemMain}>
+              <div
+                className={styles.iconWrap}
+                style={{ backgroundColor: project.homeIconBg }}
+              >
+                <Image
+                  src={project.homeIconPath}
+                  alt=""
+                  aria-hidden="true"
+                  width={28}
+                  height={28}
+                  className={styles.icon}
+                />
+              </div>
 
-          <div className="min-w-0 flex-1 pr-2">
-            <p className="text-[1rem] leading-6 tracking-[0.03125rem] text-[#231d2a]">
-              {project.homeTitle}
-            </p>
-            <p className="mt-0.5 text-[0.875rem] leading-5 tracking-[0.015625rem] text-[#6d6674]">
-              {project.homeDescription}
-            </p>
-          </div>
-        </Link>
+              <div className={styles.copy}>
+                <p className={styles.title}>{project.homeTitle}</p>
+                <p className={styles.description}>{project.homeDescription}</p>
+              </div>
+            </div>
+
+            <span className={styles.arrowWrap}>
+              <ArrowIcon />
+            </span>
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

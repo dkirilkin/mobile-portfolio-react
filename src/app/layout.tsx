@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { SiteFooter } from "@/components/site-footer";
 import { SiteMenu } from "@/components/site-menu";
 
 import "./globals.css";
@@ -17,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mobile Portfolio",
-  description: "Портфолио мобильной разработки с отдельными страницами проектов.",
+  description:
+    "Портфолио мобильной разработки с отдельными страницами проектов.",
 };
 
 export default function RootLayout({
@@ -26,13 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ru"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <SiteMenu />
-        <div className="lg:pl-[min(22.5rem,30vw)]">{children}</div>
+    <html lang="ru" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
+        <div className="app-shell">
+          <SiteMenu />
+          <div className="app-shell__body">{children}</div>
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );
