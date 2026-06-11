@@ -5,12 +5,13 @@ import { HeroProjectMarquee } from "@/components/hero-project-marquee";
 import { ProjectList } from "@/components/project-list";
 import { TelegramIcon } from "@/components/telegram-icon";
 import { TELEGRAM_URL, TELEGRAM_USERNAME } from "@/constants/contact";
-import { getHomeProjects, getSortedProjects } from "@/data/projects";
+import { getSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
 
-const homeProjects = getHomeProjects();
-const heroProjects = getSortedProjects();
+const sortedProjects = getSortedProjects();
+const homeProjects = sortedProjects.slice(0, 4);
+const heroProjects = sortedProjects;
 
 const frontendStack = ["FlutterFlow", "Webflow"];
 const backendStack = ["Supabase", "Firebase", "Xano", "n8n"];
@@ -70,6 +71,24 @@ function WebIcon() {
   );
 }
 
+function ArrowForwardIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={styles.sectionCtaIcon}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    >
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </svg>
+  );
+}
+
 function PlatformChip({
   icon,
   label,
@@ -94,9 +113,8 @@ export default function Home() {
             <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>Разработка MVP и цифровых продуктов</h1>
               <p className={styles.heroDescription}>
-                Запускаю мобильные, веб- и внутренние продукты без лишнего цикла
-                согласований: от первого сценария и структуры до рабочего MVP, который
-                можно показывать клиентам, команде и инвесторам.
+                Запускаю мобильные и веб-продукты без лишнего цикла согласований и
+                дополнительных расходов
               </p>
 
               <div className={styles.platformRow}>
@@ -144,6 +162,7 @@ export default function Home() {
 
         <Link href="/projects" className={`md3-button md3-button--filled ${styles.sectionCta}`}>
           Все проекты
+          <ArrowForwardIcon />
         </Link>
       </section>
 
