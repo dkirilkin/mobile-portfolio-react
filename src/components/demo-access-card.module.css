@@ -154,6 +154,10 @@
   margin-top: 1rem;
 }
 
+.content :global(.demo-actions-column) {
+  flex-direction: column;
+}
+
 .content :global(.demo-action-stack) {
   display: flex;
   flex-direction: column;
@@ -232,4 +236,21 @@
 .content :global(.demo-button-icon svg) {
   width: 1rem;
   height: 1rem;
+}
+
+.content :global(.demo-button-store) {
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: flex-start;
+  padding-inline: 1.125rem;
+}
+
+.content :global(.demo-button-icon-store) {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.content :global(.demo-button-icon-store svg) {
+  width: 1.25rem;
+  height: 1.25rem;
 }

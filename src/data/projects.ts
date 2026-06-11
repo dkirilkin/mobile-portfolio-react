@@ -45,6 +45,46 @@ const requestDemoAccessHTML = `
   </div>
 `.trim();
 
+const evClientsDemoAccessHTML = `
+  <div class="demo-section">
+    <h3 class="demo-heading">Доступ</h3>
+    <p class="demo-meta">Скачать из</p>
+    <div class="demo-actions">
+      <a
+        class="demo-button demo-button-filled demo-button-store"
+        href="https://apps.apple.com/ru/app/%D0%BA%D0%BB%D1%83%D0%B1-%D0%B7%D0%B0%D1%80%D1%8F%D0%B4-%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D1%8B/id6752478185"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Скачать в App Store"
+      >
+        <span class="demo-button-icon demo-button-icon-store" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16.37 12.31c.02 2.19 1.92 2.92 1.94 2.93-.02.05-.3 1.03-.98 2.03-.59.86-1.2 1.72-2.16 1.74-.95.02-1.26-.56-2.35-.56-1.1 0-1.44.54-2.33.58-.92.03-1.62-.92-2.22-1.77-1.22-1.76-2.15-4.96-.9-7.12.62-1.07 1.73-1.75 2.93-1.77.91-.02 1.77.61 2.35.61.58 0 1.67-.75 2.81-.64.48.02 1.82.19 2.68 1.45-.07.04-1.6.93-1.58 2.52ZM14.51 6.12c.49-.59.83-1.42.74-2.24-.71.03-1.58.47-2.09 1.06-.46.52-.87 1.36-.76 2.16.79.06 1.61-.4 2.11-.98Z" />
+          </svg>
+        </span>
+        App Store
+      </a>
+      <a
+        class="demo-button demo-button-outlined demo-button-store"
+        href="https://play.google.com/store/apps/details?id=com.electrocharge.electrocharge"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Скачать в Google Play"
+      >
+        <span class="demo-button-icon demo-button-icon-store" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M3.5 2.8c-.2.23-.32.56-.32.96V20.2c0 .4.12.73.32.96l9.13-9.13L3.5 2.8Z" fill="currentColor" opacity="0.72" />
+            <path d="M16.1 15.5 13.1 12l3-3.5 3.63 2.07c1.55.88 1.55 2.17 0 3.05L16.1 15.5Z" fill="currentColor" />
+            <path d="M4.17 21.5c.3.03.65-.04 1.04-.26l10.88-6.2L13.1 12 4.17 21.5Z" fill="currentColor" opacity="0.88" />
+            <path d="M4.17 2.5 13.1 12l2.99-3.04L5.2 2.76c-.4-.23-.74-.3-1.04-.26Z" fill="currentColor" opacity="0.88" />
+          </svg>
+        </span>
+        Google Play
+      </a>
+    </div>
+  </div>
+`.trim();
+
 void placeholderDemoAccessHTML;
 
 const ecommerceDemoAccessHTML = `
@@ -399,7 +439,7 @@ export const projects: Project[] = [
 - Реалтайм-обновления статусов заказов
     `.trim(),
     stack: "Backend: Supabase (PostgreSQL, Edge Functions, RPC, Cron)\nFrontend: FlutterFlow",
-    demoAccessHTML: requestDemoAccessHTML,
+    demoAccessHTML: evClientsDemoAccessHTML,
     screenshots: createScreenshots(
       "ev-clients",
       [
