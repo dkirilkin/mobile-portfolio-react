@@ -19,8 +19,8 @@ export function SiteFooter() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <p>
-          <strong className={styles.strong}>Разработчик MVP</strong>. Создаю
-          MVP и цифровые продукты.
+          <strong className={styles.strong}>Product-разработчик</strong>.
+          Запускаю MVP и цифровые продукты с ИИ-ускоренным пайплайном.
         </p>
         <p>Дмитрий Кирилкин</p>
         <Link

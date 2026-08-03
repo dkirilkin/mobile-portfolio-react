@@ -1,20 +1,93 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { CaseCard } from "@/components/case-card";
 import { HeroProjectMarquee } from "@/components/hero-project-marquee";
 import { ProjectList } from "@/components/project-list";
 import { TelegramIcon } from "@/components/telegram-icon";
 import { TELEGRAM_URL, TELEGRAM_USERNAME } from "@/constants/contact";
+import { getSortedCases } from "@/data/cases";
 import { getSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
 
-const sortedProjects = getSortedProjects();
-const homeProjects = sortedProjects.slice(0, 4);
-const heroProjects = sortedProjects;
+const sortedCases = getSortedCases();
+const heroProjects = getSortedProjects();
+const standaloneProjects = getSortedProjects()
+  .filter((project) => !project.caseSlug)
+  .slice(0, 4);
 
 const frontendStack = ["FlutterFlow", "Webflow"];
 const backendStack = ["Supabase", "Firebase", "Xano", "n8n"];
+
+const services = [
+  {
+    title: "MVP под ключ",
+    description:
+      "От идеи до публикации в App Store, Google Play и Web. Продукт готов к первым пользователям, оплате и аналитике.",
+  },
+  {
+    title: "Продукт с ИИ-функциями",
+    description:
+      "Ассистенты, обработка документов, персонализация и рекомендации — встрою ИИ-возможности в ваш продукт.",
+  },
+  {
+    title: "Развитие и сопровождение",
+    description:
+      "Новые функции, доработки и поддержка после запуска — продукт растёт вместе с бизнесом.",
+  },
+];
+
+const advantages = [
+  {
+    title: "Результат, а не прототип",
+    description:
+      "Приложения публикуются в сторах и работают с реальными пользователями и платежами.",
+  },
+  {
+    title: "Системы, а не экраны",
+    description:
+      "Проектирую целые экосистемы: несколько приложений и ролей на едином backend.",
+  },
+  {
+    title: "Серьёзный backend",
+    description:
+      "PostgreSQL, серверная логика, realtime, интеграции с платёжными и корпоративными системами.",
+  },
+  {
+    title: "На языке бизнеса",
+    description:
+      "Опыт аналитика и PM в Норникеле и X5: сам формулирую требования, без «переводчика» со стороны клиента.",
+  },
+  {
+    title: "Скорость ИИ-пайплайна",
+    description:
+      "ИИ-агенты ускоряют разработку в разы: запуск за недели, бюджет ниже студийного.",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Обсуждение",
+    description: "Разбираем идею, цели и ограничения, фиксируем объём MVP.",
+  },
+  {
+    title: "Прототип",
+    description: "Согласовываем ключевые экраны и сценарии.",
+  },
+  {
+    title: "Разработка",
+    description: "Итерации с промежуточными демо — вы видите прогресс.",
+  },
+  {
+    title: "Запуск",
+    description: "Публикация в App Store, Google Play или Web.",
+  },
+  {
+    title: "Поддержка",
+    description: "Развиваю продукт после запуска.",
+  },
+];
 
 function AppleIcon() {
   return (
@@ -111,10 +184,13 @@ export default function Home() {
         <div className={`md3-container ${styles.heroContainer}`}>
           <div className={styles.heroGrid}>
             <div className={styles.heroContent}>
-              <h1 className={styles.heroTitle}>Разработка MVP и цифровых продуктов</h1>
+              <h1 className={styles.heroTitle}>
+                MVP и цифровые продукты под ключ
+              </h1>
               <p className={styles.heroDescription}>
-                Запускаю мобильные и веб-продукты без лишнего цикла согласований и
-                дополнительных расходов
+                Мобильные и веб-приложения от идеи до публикации в сторах — за
+                недели, а не месяцы. Работаю по ИИ-ускоренному пайплайну,
+                поэтому быстрее и дешевле студии. За качество отвечаю лично.
               </p>
 
               <div className={styles.platformRow}>
@@ -125,20 +201,20 @@ export default function Home() {
 
               <div className={styles.heroActions}>
                 <Link
-                  href="/projects"
-                  className={`md3-button md3-button--filled ${styles.heroButtonPrimary}`}
-                >
-                  Смотреть проекты
-                </Link>
-
-                <Link
                   href={TELEGRAM_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className={`md3-button md3-button--outlined ${styles.heroButtonSecondary}`}
+                  className={`md3-button md3-button--filled ${styles.heroButtonPrimary}`}
                 >
                   <TelegramIcon className={styles.telegramIcon} />
-                  Написать в Telegram
+                  Обсудить проект
+                </Link>
+
+                <Link
+                  href="#cases"
+                  className={`md3-button md3-button--outlined ${styles.heroButtonSecondary}`}
+                >
+                  Смотреть кейсы
                 </Link>
               </div>
             </div>
@@ -150,20 +226,97 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        id="cases"
+        className={`md3-container ${styles.casesSection}`}
+      >
+        <div className={styles.sectionHeader}>
+          <div>
+            <p className="md3-eyebrow">Сквозные кейсы</p>
+            <h2 className="md3-section-title">Системы, а не отдельные экраны</h2>
+          </div>
+        </div>
+
+        <div className={styles.casesGrid}>
+          {sortedCases.map((caseItem) => (
+            <CaseCard key={caseItem.slug} caseItem={caseItem} />
+          ))}
+        </div>
+      </section>
+
       <section className={`md3-container ${styles.projectsSection}`}>
         <div className={styles.sectionHeader}>
           <div>
             <p className="md3-eyebrow">Работы</p>
-            <h2 className="md3-section-title">Портфолио</h2>
+            <h2 className="md3-section-title">Проекты</h2>
           </div>
         </div>
 
-        <ProjectList projects={homeProjects} />
+        <ProjectList projects={standaloneProjects} />
 
         <Link href="/projects" className={`md3-button md3-button--filled ${styles.sectionCta}`}>
           Все проекты
           <ArrowForwardIcon />
         </Link>
+      </section>
+
+      <section className={`md3-container ${styles.servicesSection}`}>
+        <div className={styles.sectionHeader}>
+          <div>
+            <p className="md3-eyebrow">Услуги</p>
+            <h2 className="md3-section-title">Что я делаю</h2>
+          </div>
+        </div>
+
+        <div className={styles.servicesGrid}>
+          {services.map((service) => (
+            <article key={service.title} className={`md3-surface ${styles.serviceCard}`}>
+              <h3 className={styles.cardTitle}>{service.title}</h3>
+              <p className={styles.cardText}>{service.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={`md3-container ${styles.advantagesSection}`}>
+        <div className={styles.sectionHeader}>
+          <div>
+            <p className="md3-eyebrow">Преимущества</p>
+            <h2 className="md3-section-title">Почему я</h2>
+          </div>
+        </div>
+
+        <div className={styles.advantagesGrid}>
+          {advantages.map((advantage) => (
+            <article key={advantage.title} className={`md3-surface ${styles.advantageCard}`}>
+              <h3 className={styles.cardTitle}>{advantage.title}</h3>
+              <p className={styles.cardText}>{advantage.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={`md3-container ${styles.processSection}`}>
+        <div className={styles.sectionHeader}>
+          <div>
+            <p className="md3-eyebrow">Процесс</p>
+            <h2 className="md3-section-title">Как я работаю</h2>
+          </div>
+        </div>
+
+        <ol className={styles.processList}>
+          {processSteps.map((step, index) => (
+            <li key={step.title} className={`md3-surface ${styles.processItem}`}>
+              <span className={styles.processStep} aria-hidden="true">
+                {index + 1}
+              </span>
+              <div>
+                <h3 className={styles.cardTitle}>{step.title}</h3>
+                <p className={styles.cardText}>{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className={`md3-container ${styles.aboutSection}`}>
@@ -179,8 +332,12 @@ export default function Home() {
 
             <div className={styles.profileCopy}>
               <p className="md3-eyebrow">Обо мне</p>
-              <h2 className={styles.profileTitle}>Lowcode-разработчик / Аналитик</h2>
+              <h2 className={styles.profileTitle}>Product-разработчик</h2>
               <p className={styles.profileName}>Кирилкин Дмитрий</p>
+              <p className={styles.profileTagline}>
+                Запускаю MVP и цифровые продукты с ИИ-ускоренным пайплайном
+                разработки
+              </p>
             </div>
           </div>
         </div>

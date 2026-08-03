@@ -4,15 +4,24 @@
 }
 
 .heroContainer,
+.casesSection,
 .projectsSection,
+.servicesSection,
+.advantagesSection,
+.processSection,
 .aboutSection {
   display: flex;
   flex-direction: column;
 }
 
+.casesSection,
 .projectsSection,
+.servicesSection,
+.advantagesSection,
+.processSection,
 .aboutSection {
   margin-top: 2rem;
+  scroll-margin-top: 5.5rem;
 }
 
 .heroBand {
@@ -123,6 +132,56 @@
   flex: 0 0 auto;
 }
 
+.casesGrid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.servicesGrid,
+.advantagesGrid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.serviceCard,
+.advantageCard {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.processList {
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.processItem {
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.processStep {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .profileCard,
 .detailCard {
   padding: 1.25rem;
@@ -160,6 +219,13 @@
 
 .profileName {
   color: var(--md-sys-color-on-surface-variant);
+}
+
+.profileTagline {
+  margin-top: 0.25rem;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
 .detailGrid {
@@ -218,7 +284,10 @@
 @media (min-width: 720px) {
   .heroContainer,
   .profileCard,
-  .detailCard {
+  .detailCard,
+  .serviceCard,
+  .advantageCard,
+  .processItem {
     padding: 1.5rem;
   }
 
@@ -232,6 +301,12 @@
   }
 
   .stackGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servicesGrid,
+  .advantagesGrid,
+  .processList {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -268,5 +343,22 @@
 
   .detailGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .casesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .servicesGrid,
+  .advantagesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .processList {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .processItem {
+    flex-direction: column;
   }
 }

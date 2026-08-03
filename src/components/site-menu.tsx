@@ -4,10 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { getSortedCases } from "@/data/cases";
 import { getSortedProjects } from "@/data/projects";
 
 import styles from "./site-menu.module.css";
 
+const menuCases = getSortedCases();
 const menuProjects = getSortedProjects();
 
 function MenuIcon({ open }: { open: boolean }) {
@@ -151,6 +153,28 @@ export function SiteMenu() {
           </div>
 
           <div className={styles.projectGroup}>
+            <p className={`md3-eyebrow ${styles.groupLabel}`}>Кейсы</p>
+            <div className={styles.projectList}>
+              {menuCases.map((caseItem) => {
+                const caseHref = `/cases/${caseItem.slug}`;
+                const isActive = pathname === caseHref;
+
+                return (
+                  <Link
+                    key={caseItem.slug}
+                    href={caseHref}
+                    onClick={closeMenu}
+                    className={projectLinkClass(isActive)}
+                  >
+                    {caseItem.title}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className={styles.projectGroup}>
+            <p className={`md3-eyebrow ${styles.groupLabel}`}>Проекты</p>
             <div className={styles.projectList}>
               {menuProjects.map((project) => {
                 const projectHref = `/projects/${project.slug}`;

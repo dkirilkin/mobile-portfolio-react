@@ -85,6 +85,32 @@ const evClientsDemoAccessHTML = `
   </div>
 `.trim();
 
+const evTechniciansDemoAccessHTML = `
+  <div class="demo-section">
+    <h3 class="demo-heading">Вход</h3>
+    <p class="demo-meta">Приложение можно скачать из Google Play.</p>
+    <div class="demo-actions">
+      <a
+        class="demo-button demo-button-outlined demo-button-store"
+        href="https://play.google.com/store/apps/details?id=com.electrocharge.technicians"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Скачать в Google Play"
+      >
+        <span class="demo-button-icon demo-button-icon-store" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M3.5 2.8c-.2.23-.32.56-.32.96V20.2c0 .4.12.73.32.96l9.13-9.13L3.5 2.8Z" fill="currentColor" opacity="0.72" />
+            <path d="M16.1 15.5 13.1 12l3-3.5 3.63 2.07c1.55.88 1.55 2.17 0 3.05L16.1 15.5Z" fill="currentColor" />
+            <path d="M4.17 21.5c.3.03.65-.04 1.04-.26l10.88-6.2L13.1 12 4.17 21.5Z" fill="currentColor" opacity="0.88" />
+            <path d="M4.17 2.5 13.1 12l2.99-3.04L5.2 2.76c-.4-.23-.74-.3-1.04-.26Z" fill="currentColor" opacity="0.88" />
+          </svg>
+        </span>
+        Google Play
+      </a>
+    </div>
+  </div>
+`.trim();
+
 void placeholderDemoAccessHTML;
 
 const ecommerceDemoAccessHTML = `
@@ -278,6 +304,7 @@ export const projects: Project[] = [
     `.trim(),
     stack: "Backend: Supabase, PHP (Laravel)\nFrontend: FlutterFlow",
     demoAccessHTML: requestDemoAccessHTML,
+    caseSlug: "darkstore-delivery",
     screenshots: createScreenshots(
       "e-dy-delivery",
       [
@@ -318,6 +345,7 @@ export const projects: Project[] = [
     `.trim(),
     stack: "Backend: Supabase, PHP (Laravel)\nFrontend: FlutterFlow",
     demoAccessHTML: requestDemoAccessHTML,
+    caseSlug: "darkstore-delivery",
     screenshots: createScreenshots(
       "e-dy-picking",
       [
@@ -440,6 +468,7 @@ export const projects: Project[] = [
     `.trim(),
     stack: "Backend: Supabase (PostgreSQL, Edge Functions, RPC, Cron)\nFrontend: FlutterFlow",
     demoAccessHTML: evClientsDemoAccessHTML,
+    caseSlug: "ev-charging",
     screenshots: createScreenshots(
       "ev-clients",
       [
@@ -484,7 +513,8 @@ export const projects: Project[] = [
 - Обработка состояний (state management) для жизненного цикла заказа
     `.trim(),
     stack: "Backend: Supabase\nFrontend: FlutterFlow",
-    demoAccessHTML: requestDemoAccessHTML,
+    demoAccessHTML: evTechniciansDemoAccessHTML,
+    caseSlug: "ev-charging",
     screenshots: createScreenshots(
       "ev-technicians",
       [

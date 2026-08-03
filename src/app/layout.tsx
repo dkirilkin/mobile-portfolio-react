@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mobile Portfolio",
+  title: "Дмитрий Кирилкин — MVP и цифровые продукты под ключ",
   description:
-    "Портфолио мобильной разработки с отдельными страницами проектов.",
+    "Запускаю мобильные и веб-продукты от идеи до публикации в App Store и Google Play. ИИ-ускоренная разработка: быстрее и дешевле студии.",
 };
 
 export default function RootLayout({
