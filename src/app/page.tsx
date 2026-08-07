@@ -1,19 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { CaseCard } from "@/components/case-card";
 import { HeroProjectMarquee } from "@/components/hero-project-marquee";
 import { ProjectList } from "@/components/project-list";
 import { TelegramIcon } from "@/components/telegram-icon";
 import { TELEGRAM_URL, TELEGRAM_USERNAME } from "@/constants/contact";
+import { getSortedCases } from "@/data/cases";
 import { getSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
 
+const sortedCases = getSortedCases();
 const sortedProjects = getSortedProjects();
-const homeProjects = sortedProjects.slice(0, 4);
+const homeProjects = sortedProjects
+  .filter((project) => !project.caseSlug)
+  .slice(0, 4);
 const heroProjects = sortedProjects;
 
-const frontendStack = ["FlutterFlow", "Webflow"];
+const frontendStack = ["Flutter", "React", "Vue"];
 const backendStack = ["Supabase", "Firebase", "Xano", "n8n"];
 
 function AppleIcon() {
@@ -113,8 +118,8 @@ export default function Home() {
             <div className={styles.heroContent}>
               <h1 className={styles.heroTitle}>Разработка MVP и цифровых продуктов</h1>
               <p className={styles.heroDescription}>
-                Запускаю мобильные и веб-продукты без лишнего цикла согласований и
-                дополнительных расходов
+                Запускаю мобильные и веб-продукты с AI-ускоренной разработкой,
+                понятной архитектурой и фокусом на рабочий результат
               </p>
 
               <div className={styles.platformRow}>
@@ -125,10 +130,10 @@ export default function Home() {
 
               <div className={styles.heroActions}>
                 <Link
-                  href="/projects"
+                  href="#cases"
                   className={`md3-button md3-button--filled ${styles.heroButtonPrimary}`}
                 >
-                  Смотреть проекты
+                  Смотреть кейсы
                 </Link>
 
                 <Link
@@ -150,11 +155,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        id="cases"
+        className={`md3-container ${styles.casesSection}`}
+      >
+        <div className={styles.sectionHeader}>
+          <div>
+            <p className="md3-eyebrow">Кейсы</p>
+            <h2 className="md3-section-title">Системы из нескольких приложений</h2>
+          </div>
+        </div>
+
+        <div className={styles.casesGrid}>
+          {sortedCases.map((caseItem) => (
+            <CaseCard key={caseItem.slug} caseItem={caseItem} />
+          ))}
+        </div>
+      </section>
+
       <section className={`md3-container ${styles.projectsSection}`}>
         <div className={styles.sectionHeader}>
           <div>
             <p className="md3-eyebrow">Работы</p>
-            <h2 className="md3-section-title">Портфолио</h2>
+            <h2 className="md3-section-title">Отдельные проекты</h2>
           </div>
         </div>
 
@@ -179,7 +202,7 @@ export default function Home() {
 
             <div className={styles.profileCopy}>
               <p className="md3-eyebrow">Обо мне</p>
-              <h2 className={styles.profileTitle}>Lowcode-разработчик / Аналитик</h2>
+              <h2 className={styles.profileTitle}>AI-разработчик / Аналитик</h2>
               <p className={styles.profileName}>Кирилкин Дмитрий</p>
             </div>
           </div>
@@ -188,7 +211,7 @@ export default function Home() {
         <div className={styles.detailGrid}>
           <article className={`md3-surface ${styles.detailCard}`}>
             <p className="md3-eyebrow">Stack</p>
-            <h3 className={styles.cardTitle}>Инструменты и backend</h3>
+            <h3 className={styles.cardTitle}>Инструменты разработки</h3>
 
             <div className={styles.stackGrid}>
               <div>
@@ -208,6 +231,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+
             </div>
           </article>
 

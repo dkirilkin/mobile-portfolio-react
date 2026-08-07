@@ -4,12 +4,14 @@
 }
 
 .heroContainer,
+.casesSection,
 .projectsSection,
 .aboutSection {
   display: flex;
   flex-direction: column;
 }
 
+.casesSection,
 .projectsSection,
 .aboutSection {
   margin-top: 2rem;
@@ -123,6 +125,12 @@
   flex: 0 0 auto;
 }
 
+.casesGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 .profileCard,
 .detailCard {
   padding: 1.25rem;
@@ -232,6 +240,10 @@
   }
 
   .stackGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .casesGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
