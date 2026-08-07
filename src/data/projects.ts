@@ -256,6 +256,44 @@ export const projects: Project[] = [
   {
     order: 5,
     isOnHome: true,
+    slug: "e-dy-clients",
+    title: "Доставка товаров: для клиентов",
+    category: "Электронная коммерция / Доставка",
+    homeTitle: "Аналог Самоката: клиентам",
+    homeIconPath: "/images/svg_icons/pedal_bike.svg",
+    homeIconBg: "#EA570F",
+    homeDescription: "Приложения для клиентов - заказ товаров для доставки",
+    homeCategory: "Delivery",
+    homeTags: ["FlutterFlow", "Supabase", "Laravel"],
+    descriptionMarkdown: `
+Приложение для курьеров, упрощающее процесс доставки товаров из darkstore до клиента. Четкий пошаговый алгоритм исключает путаницу и пропуск важных действий.
+
+## Что внутри
+
+- Удобный выбор эмоций по категориям
+- Анализ мыслей с маркировкой когнитивных искажений
+- Комплексное оспаривание нескольких негативных мыслей, относящихся к одной записи
+- Обучающий тур и примеры
+    `.trim(),
+    stack: "Backend: Supabase, Xano\nFrontend: FlutterFlow",
+    demoAccessHTML: requestDemoAccessHTML,
+    screenshots: createScreenshots(
+      "e-dy clients",
+      [
+        "01.jpg",
+        "02.jpg",
+        "04.jpg",
+        "05.jpg",
+        "06.jpg",
+        "07.jpg",
+        "09.jpg"
+      ],
+      "Cognitivy",
+    ),
+  },
+  {
+    order: 5,
+    isOnHome: true,
     slug: "e-dy-delivery",
     title: "Доставка товаров: для курьеров",
     category: "Электронная коммерция / Доставка",
