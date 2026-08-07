@@ -1,28 +1,39 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import { TelegramIcon } from "@/components/telegram-icon";
-import { TELEGRAM_URL } from "@/constants/contact";
+import { TELEGRAM_URL, TELEGRAM_USERNAME } from "@/constants/contact";
 
 import styles from "./site-footer.module.css";
 
 export function SiteFooter() {
-  const pathname = usePathname();
-
-  if (pathname === "/") {
-    return null;
-  }
-
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
-        <p>
-          <strong className={styles.strong}>Product-разработчик</strong>.
-          Запускаю MVP и цифровые продукты с ИИ-ускоренным пайплайном.
-        </p>
-        <p>Дмитрий Кирилкин</p>
+        <div className={styles.info}>
+          <p className={styles.name}>Дмитрий Кирилкин</p>
+          <p className={styles.tagline}>
+            Product-разработчик. Запускаю MVP и цифровые продукты
+            с ИИ-ускоренным пайплайном.
+          </p>
+        </div>
+
+        <nav className={styles.nav} aria-label="Навигация в подвале">
+          <Link href="/" className={styles.navLink}>
+            Главная
+          </Link>
+          <Link href="/projects" className={styles.navLink}>
+            Проекты
+          </Link>
+          <a
+            href={TELEGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.navLink}
+          >
+            {TELEGRAM_USERNAME}
+          </a>
+        </nav>
+
         <Link
           href={TELEGRAM_URL}
           target="_blank"
@@ -32,6 +43,10 @@ export function SiteFooter() {
           <TelegramIcon className={styles.icon} />
           Написать в Telegram
         </Link>
+      </div>
+
+      <div className={styles.bottom}>
+        <p>© 2026 Дмитрий Кирилкин</p>
       </div>
     </footer>
   );

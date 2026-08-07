@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion/reveal";
 import { ProjectList } from "@/components/project-list";
 import { getSortedProjects } from "@/data/projects";
 
@@ -9,16 +10,18 @@ export default function ProjectsPage() {
   return (
     <main className={`md3-page ${styles.page}`}>
       <section className={`md3-container ${styles.container}`}>
-        <div className={styles.header}>
+        <Reveal className={styles.header}>
           <p className="md3-eyebrow">Каталог кейсов</p>
           <h1 className={styles.title}>Все проекты</h1>
           <p className={styles.description}>
             Подборка low-code и mobile кейсов: клиентские приложения,
             внутренние инструменты и сервисные решения.
           </p>
-        </div>
+        </Reveal>
 
-        <ProjectList projects={allProjects} />
+        <Reveal delay={0.1}>
+          <ProjectList projects={allProjects} />
+        </Reveal>
       </section>
     </main>
   );

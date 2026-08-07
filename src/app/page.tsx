@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { CaseCard } from "@/components/case-card";
 import { HeroProjectMarquee } from "@/components/hero-project-marquee";
+import { Magnetic } from "@/components/motion/magnetic";
+import { Reveal } from "@/components/motion/reveal";
 import { ProjectList } from "@/components/project-list";
 import { TelegramIcon } from "@/components/telegram-icon";
 import { TELEGRAM_URL, TELEGRAM_USERNAME } from "@/constants/contact";
@@ -184,31 +186,33 @@ export default function Home() {
         <div className={`md3-container ${styles.heroContainer}`}>
           <div className={styles.heroGrid}>
             <div className={styles.heroContent}>
-              <h1 className={styles.heroTitle}>
+              <Reveal as="h1" className={styles.heroTitle}>
                 MVP и цифровые продукты под ключ
-              </h1>
-              <p className={styles.heroDescription}>
+              </Reveal>
+              <Reveal className={styles.heroDescription} delay={0.1} as="p">
                 Мобильные и веб-приложения от идеи до публикации в сторах — за
                 недели, а не месяцы. Работаю по ИИ-ускоренному пайплайну,
                 поэтому быстрее и дешевле студии. За качество отвечаю лично.
-              </p>
+              </Reveal>
 
-              <div className={styles.platformRow}>
+              <Reveal className={styles.platformRow} delay={0.18}>
                 <PlatformChip icon={<AppleIcon />} label="iOS" />
                 <PlatformChip icon={<AndroidIcon />} label="Android" />
                 <PlatformChip icon={<WebIcon />} label="Web" />
-              </div>
+              </Reveal>
 
-              <div className={styles.heroActions}>
-                <Link
-                  href={TELEGRAM_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`md3-button md3-button--filled ${styles.heroButtonPrimary}`}
-                >
-                  <TelegramIcon className={styles.telegramIcon} />
-                  Обсудить проект
-                </Link>
+              <Reveal className={styles.heroActions} delay={0.26}>
+                <Magnetic className={styles.magneticWrap}>
+                  <Link
+                    href={TELEGRAM_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`md3-button md3-button--filled ${styles.heroButtonPrimary}`}
+                  >
+                    <TelegramIcon className={styles.telegramIcon} />
+                    Обсудить проект
+                  </Link>
+                </Magnetic>
 
                 <Link
                   href="#cases"
@@ -216,12 +220,12 @@ export default function Home() {
                 >
                   Смотреть кейсы
                 </Link>
-              </div>
+              </Reveal>
             </div>
 
-            <div className={styles.heroMarqueeWrap}>
+            <Reveal className={styles.heroMarqueeWrap} delay={0.2} y={40}>
               <HeroProjectMarquee projects={heroProjects} />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -230,179 +234,204 @@ export default function Home() {
         id="cases"
         className={`md3-container ${styles.casesSection}`}
       >
-        <div className={styles.sectionHeader}>
+        <Reveal className={styles.sectionHeader}>
           <div>
             <p className="md3-eyebrow">Сквозные кейсы</p>
             <h2 className="md3-section-title">Системы, а не отдельные экраны</h2>
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.casesGrid}>
-          {sortedCases.map((caseItem) => (
-            <CaseCard key={caseItem.slug} caseItem={caseItem} />
+          {sortedCases.map((caseItem, index) => (
+            <Reveal key={caseItem.slug} delay={index * 0.12}>
+              <CaseCard caseItem={caseItem} />
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className={`md3-container ${styles.projectsSection}`}>
-        <div className={styles.sectionHeader}>
+        <Reveal className={styles.sectionHeader}>
           <div>
             <p className="md3-eyebrow">Работы</p>
             <h2 className="md3-section-title">Проекты</h2>
           </div>
-        </div>
+        </Reveal>
 
-        <ProjectList projects={standaloneProjects} />
+        <Reveal delay={0.1}>
+          <ProjectList projects={standaloneProjects} />
+        </Reveal>
 
-        <Link href="/projects" className={`md3-button md3-button--filled ${styles.sectionCta}`}>
-          Все проекты
-          <ArrowForwardIcon />
-        </Link>
+        <Reveal className={styles.sectionCta} delay={0.15}>
+          <Link href="/projects" className={`md3-button md3-button--filled`}>
+            Все проекты
+            <ArrowForwardIcon />
+          </Link>
+        </Reveal>
       </section>
 
       <section className={`md3-container ${styles.servicesSection}`}>
-        <div className={styles.sectionHeader}>
+        <Reveal className={styles.sectionHeader}>
           <div>
             <p className="md3-eyebrow">Услуги</p>
             <h2 className="md3-section-title">Что я делаю</h2>
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.servicesGrid}>
-          {services.map((service) => (
-            <article key={service.title} className={`md3-surface ${styles.serviceCard}`}>
-              <h3 className={styles.cardTitle}>{service.title}</h3>
-              <p className={styles.cardText}>{service.description}</p>
-            </article>
+          {services.map((service, index) => (
+            <Reveal key={service.title} delay={index * 0.1}>
+              <article className={`md3-surface ${styles.serviceCard}`}>
+                <h3 className={styles.cardTitle}>{service.title}</h3>
+                <p className={styles.cardText}>{service.description}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className={`md3-container ${styles.advantagesSection}`}>
-        <div className={styles.sectionHeader}>
+        <Reveal className={styles.sectionHeader}>
           <div>
             <p className="md3-eyebrow">Преимущества</p>
             <h2 className="md3-section-title">Почему я</h2>
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.advantagesGrid}>
-          {advantages.map((advantage) => (
-            <article key={advantage.title} className={`md3-surface ${styles.advantageCard}`}>
-              <h3 className={styles.cardTitle}>{advantage.title}</h3>
-              <p className={styles.cardText}>{advantage.description}</p>
-            </article>
+          {advantages.map((advantage, index) => (
+            <Reveal key={advantage.title} delay={index * 0.07}>
+              <article className={`md3-surface ${styles.advantageCard}`}>
+                <h3 className={styles.cardTitle}>{advantage.title}</h3>
+                <p className={styles.cardText}>{advantage.description}</p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className={`md3-container ${styles.processSection}`}>
-        <div className={styles.sectionHeader}>
+        <Reveal className={styles.sectionHeader}>
           <div>
             <p className="md3-eyebrow">Процесс</p>
             <h2 className="md3-section-title">Как я работаю</h2>
           </div>
-        </div>
+        </Reveal>
 
         <ol className={styles.processList}>
           {processSteps.map((step, index) => (
-            <li key={step.title} className={`md3-surface ${styles.processItem}`}>
+            <Reveal
+              as="li"
+              key={step.title}
+              className={styles.processItem}
+              delay={index * 0.08}
+            >
               <span className={styles.processStep} aria-hidden="true">
-                {index + 1}
+                {String(index + 1).padStart(2, "0")}
               </span>
-              <div>
+              <div className={styles.processBody}>
                 <h3 className={styles.cardTitle}>{step.title}</h3>
                 <p className={styles.cardText}>{step.description}</p>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </section>
 
       <section className={`md3-container ${styles.aboutSection}`}>
-        <div className={`md3-surface ${styles.profileCard}`}>
-          <div className={styles.profileRow}>
-            <Image
-              src="/images/dk_photo.webp"
-              alt="Фото Дмитрия Кирилкина"
-              width={88}
-              height={88}
-              className={styles.profileImage}
-            />
+        <Reveal>
+          <div className={`md3-surface ${styles.profileCard}`}>
+            <div className={styles.profileRow}>
+              <Image
+                src="/images/dk_photo.webp"
+                alt="Фото Дмитрия Кирилкина"
+                width={88}
+                height={88}
+                className={styles.profileImage}
+              />
 
-            <div className={styles.profileCopy}>
-              <p className="md3-eyebrow">Обо мне</p>
-              <h2 className={styles.profileTitle}>Product-разработчик</h2>
-              <p className={styles.profileName}>Кирилкин Дмитрий</p>
-              <p className={styles.profileTagline}>
-                Запускаю MVP и цифровые продукты с ИИ-ускоренным пайплайном
-                разработки
-              </p>
+              <div className={styles.profileCopy}>
+                <p className="md3-eyebrow">Обо мне</p>
+                <h2 className={styles.profileTitle}>Product-разработчик</h2>
+                <p className={styles.profileName}>Кирилкин Дмитрий</p>
+                <p className={styles.profileTagline}>
+                  Запускаю MVP и цифровые продукты с ИИ-ускоренным пайплайном
+                  разработки
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.detailGrid}>
-          <article className={`md3-surface ${styles.detailCard}`}>
-            <p className="md3-eyebrow">Stack</p>
-            <h3 className={styles.cardTitle}>Инструменты и backend</h3>
+          <Reveal delay={0.05}>
+            <article className={`md3-surface ${styles.detailCard}`}>
+              <p className="md3-eyebrow">Stack</p>
+              <h3 className={styles.cardTitle}>Инструменты и backend</h3>
 
-            <div className={styles.stackGrid}>
-              <div>
-                <p className={styles.stackTitle}>Frontend</p>
-                <div className={styles.stackList}>
-                  {frontendStack.map((item) => (
-                    <p key={item}>{item}</p>
-                  ))}
+              <div className={styles.stackGrid}>
+                <div>
+                  <p className={styles.stackTitle}>Frontend</p>
+                  <div className={styles.stackList}>
+                    {frontendStack.map((item) => (
+                      <p key={item}>{item}</p>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className={styles.stackTitle}>Backend</p>
+                  <div className={styles.stackList}>
+                    {backendStack.map((item) => (
+                      <p key={item}>{item}</p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </article>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <article className={`md3-surface ${styles.detailCard}`}>
+              <p className="md3-eyebrow">Опыт</p>
+              <h3 className={styles.cardTitle}>Работал в найме</h3>
+              <p className={styles.cardText}>
+                Норникель, Астерос, X5 Group и др. на различных ролях в IT-проектах:
+                аналитик, project-менеджер, product-участник запуска.
+              </p>
+            </article>
+          </Reveal>
+
+          <Reveal delay={0.19}>
+            <article className={`md3-surface ${styles.detailCard}`}>
+              <p className="md3-eyebrow">Контакты</p>
+              <h3 className={styles.cardTitle}>Связаться напрямую</h3>
+
+              <div className={styles.contactList}>
+                <div className={styles.contactRow}>
+                  <p className={styles.contactLabel}>Локация</p>
+                  <p className={styles.contactValue}>Россия, Брянск - Москва</p>
+                </div>
+
+                <div className={styles.contactRow}>
+                  <p className={styles.contactLabel}>Telegram</p>
+                  <p className={styles.contactValue}>{TELEGRAM_USERNAME}</p>
                 </div>
               </div>
 
-              <div>
-                <p className={styles.stackTitle}>Backend</p>
-                <div className={styles.stackList}>
-                  {backendStack.map((item) => (
-                    <p key={item}>{item}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article className={`md3-surface ${styles.detailCard}`}>
-            <p className="md3-eyebrow">Опыт</p>
-            <h3 className={styles.cardTitle}>Работал в найме</h3>
-            <p className={styles.cardText}>
-              Норникель, Астерос, X5 Group и др. на различных ролях в IT-проектах:
-              аналитик, project-менеджер, product-участник запуска.
-            </p>
-          </article>
-
-          <article className={`md3-surface ${styles.detailCard}`}>
-            <p className="md3-eyebrow">Контакты</p>
-            <h3 className={styles.cardTitle}>Связаться напрямую</h3>
-
-            <div className={styles.contactList}>
-              <div className={styles.contactRow}>
-                <p className={styles.contactLabel}>Локация</p>
-                <p className={styles.contactValue}>Россия, Брянск - Москва</p>
-              </div>
-
-              <div className={styles.contactRow}>
-                <p className={styles.contactLabel}>Telegram</p>
-                <p className={styles.contactValue}>{TELEGRAM_USERNAME}</p>
-              </div>
-            </div>
-
-            <Link
-              href={TELEGRAM_URL}
-              target="_blank"
-              rel="noreferrer"
-              className={`md3-button md3-button--filled ${styles.telegramButton}`}
-            >
-              <TelegramIcon className={styles.telegramIcon} />
-              Написать в Telegram
-            </Link>
-          </article>
+              <Magnetic className={styles.magneticWrap}>
+                <Link
+                  href={TELEGRAM_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`md3-button md3-button--filled ${styles.telegramButton}`}
+                >
+                  <TelegramIcon className={styles.telegramIcon} />
+                  Написать в Telegram
+                </Link>
+              </Magnetic>
+            </article>
+          </Reveal>
         </div>
       </section>
     </main>

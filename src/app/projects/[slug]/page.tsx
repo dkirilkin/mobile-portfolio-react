@@ -4,11 +4,30 @@ import { notFound } from "next/navigation";
 
 import { DemoAccessCard } from "@/components/demo-access-card";
 import { MarkdownContent } from "@/components/markdown-content";
+import { Reveal } from "@/components/motion/reveal";
 import { ProjectCarousel } from "@/components/project-carousel";
 import { getCaseBySlug } from "@/data/cases";
 import { getProjectBySlug, getSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
+
+function BackIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={styles.backIcon}
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    >
+      <path d="M19 12H5" />
+      <path d="m11 18-6-6 6-6" />
+    </svg>
+  );
+}
 
 type ProjectPageProps = {
   params: Promise<{
@@ -35,7 +54,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} | Mobile Portfolio`,
+    title: `${project.title} | Дмитрий Кирилкин`,
     description: project.category,
   };
 }
@@ -53,14 +72,25 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main className={`md3-page ${styles.page}`}>
       <div className={`md3-container ${styles.container}`}>
+        <Reveal>
+          <Link href="/projects" className={styles.backLink}>
+            <BackIcon />
+            Все проекты
+          </Link>
+        </Reveal>
+
         <div className={styles.hero}>
-          <ProjectCarousel
-            screenshots={project.screenshots}
-            title={project.title}
-          />
+          <Reveal y={40}>
+            <ProjectCarousel
+              screenshots={project.screenshots}
+              title={project.title}
+            />
+          </Reveal>
 
           <div className={styles.titleBlock}>
-            <h1 className={styles.title}>{project.title}</h1>
+            <Reveal as="h1" className={styles.title} delay={0.08}>
+              {project.title}
+            </Reveal>
           </div>
         </div>
 

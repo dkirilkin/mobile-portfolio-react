@@ -112,6 +112,6 @@
 .link {
   color: var(--md-sys-color-primary);
   text-decoration: underline;
-  text-decoration-color: rgba(101, 85, 143, 0.38);
+  text-decoration-color: color-mix(in srgb, var(--md-sys-color-primary) 40%, transparent);
   text-underline-offset: 0.22em;
 }

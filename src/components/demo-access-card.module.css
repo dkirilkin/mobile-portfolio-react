@@ -75,7 +75,7 @@
 }
 
 .content :global(.demo-copy-row[data-copy]:hover) {
-  background: rgba(101, 85, 143, 0.06);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 7%, transparent);
   color: var(--md-sys-color-on-surface);
 }
 
@@ -127,13 +127,13 @@
 }
 
 .content :global(.demo-copy-button:hover) {
-  background: rgba(101, 85, 143, 0.08);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent);
   color: var(--md-sys-color-primary);
 }
 
 .content :global(.demo-copy-button:active),
 .content :global(.demo-copy-button[data-pressed="true"]) {
-  background: rgba(101, 85, 143, 0.14);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 16%, transparent);
   transform: scale(0.96);
 }
 
@@ -195,7 +195,7 @@
 }
 
 .content :global(.demo-button-filled:hover) {
-  background: #5c4b88;
+  background: color-mix(in srgb, var(--md-sys-color-primary) 88%, #1b1510 12%);
 }
 
 .content :global(.demo-button-tonal) {
@@ -204,7 +204,7 @@
 }
 
 .content :global(.demo-button-tonal:hover) {
-  background: #ddd0ef;
+  background: color-mix(in srgb, var(--md-sys-color-secondary-container) 88%, var(--md-sys-color-on-secondary-container) 12%);
 }
 
 .content :global(.demo-button-outlined) {
@@ -213,7 +213,7 @@
 }
 
 .content :global(.demo-button-outlined:hover) {
-  background: rgba(101, 85, 143, 0.06);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 7%, transparent);
 }
 
 .content :global(.demo-button-text) {
@@ -221,7 +221,7 @@
 }
 
 .content :global(.demo-button-text:hover) {
-  background: rgba(101, 85, 143, 0.08);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 10%, transparent);
 }
 
 .content :global(.demo-button-icon) {

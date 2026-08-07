@@ -1,46 +1,57 @@
 :root {
-  --md-ref-typeface-brand: var(--font-geist-sans), "Segoe UI", sans-serif;
+  /* Ширина боковой навигации на десктопе (0 на мобильных) */
+  --layout-nav-w: 0px;
+  /* Дисплейный шрифт — Unbounded (заголовки), текстовый — Geist */
+  --md-ref-typeface-brand: var(--font-unbounded), var(--font-geist-sans), "Segoe UI", sans-serif;
   --md-ref-typeface-plain: var(--font-geist-sans), "Segoe UI", sans-serif;
 
-  --md-sys-color-primary: #65558f;
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #eadcff;
-  --md-sys-color-on-primary-container: #221047;
-  --md-sys-color-secondary: #625b71;
-  --md-sys-color-on-secondary: #ffffff;
-  --md-sys-color-secondary-container: #e8def8;
-  --md-sys-color-on-secondary-container: #1e192b;
-  --md-sys-color-tertiary: #7e5261;
-  --md-sys-color-on-tertiary: #ffffff;
-  --md-sys-color-tertiary-container: #ffd9e3;
-  --md-sys-color-on-tertiary-container: #31101d;
-  --md-sys-color-error: #ba1a1a;
+  /* Тёплая нейтральная база + единственный оранжевый акцент (HSL ~20° 67% 46%) */
+  --md-sys-color-primary: #c75b27;
+  --md-sys-color-on-primary: #fff8f1;
+  --md-sys-color-primary-container: #f4ddc9;
+  --md-sys-color-on-primary-container: #472509;
+  --md-sys-color-secondary: #6f6355;
+  --md-sys-color-on-secondary: #fffaf3;
+  --md-sys-color-secondary-container: #ece3d4;
+  --md-sys-color-on-secondary-container: #2a2118;
+  --md-sys-color-tertiary: #8a6d3b;
+  --md-sys-color-on-tertiary: #fffaf0;
+  --md-sys-color-tertiary-container: #f2e3c2;
+  --md-sys-color-on-tertiary-container: #3d2e10;
+  --md-sys-color-error: #b3261e;
   --md-sys-color-on-error: #ffffff;
   --md-sys-color-error-container: #ffdad6;
   --md-sys-color-on-error-container: #410002;
-  --md-sys-color-surface: #faf6fc;
-  --md-sys-color-surface-dim: #ded8e1;
-  --md-sys-color-surface-bright: #fff8ff;
-  --md-sys-color-surface-container-lowest: #ffffff;
-  --md-sys-color-surface-container-low: #f5eff8;
-  --md-sys-color-surface-container: #efe9f3;
-  --md-sys-color-surface-container-high: #e8e1ec;
-  --md-sys-color-surface-container-highest: #e1dbe6;
-  --md-sys-color-on-surface: #1f1a24;
-  --md-sys-color-on-surface-variant: #655c6f;
-  --md-sys-color-outline: #7f7489;
-  --md-sys-color-outline-variant: #d1c8d8;
-  --md-sys-color-inverse-surface: #342f39;
-  --md-sys-color-inverse-on-surface: #f7eef8;
-  --md-sys-color-inverse-primary: #d1bcff;
-  --md-sys-color-scrim: rgba(31, 26, 36, 0.34);
+  --md-sys-color-surface: #faf6f0;
+  --md-sys-color-surface-dim: #e5ded2;
+  --md-sys-color-surface-bright: #fdfbf6;
+  --md-sys-color-surface-container-lowest: #fffdf9;
+  --md-sys-color-surface-container-low: #f4efe6;
+  --md-sys-color-surface-container: #eee8db;
+  --md-sys-color-surface-container-high: #e8e1d2;
+  --md-sys-color-surface-container-highest: #e2d9c7;
+  --md-sys-color-on-surface: #221d16;
+  --md-sys-color-on-surface-variant: #5c5447;
+  --md-sys-color-outline: #7d7466;
+  --md-sys-color-outline-variant: #d8d0bf;
+  --md-sys-color-inverse-surface: #2b251d;
+  --md-sys-color-inverse-on-surface: #f3ecdf;
+  --md-sys-color-inverse-primary: #f0a878;
+  --md-sys-color-scrim: rgba(34, 29, 22, 0.42);
+
+  /* Тёмная секция (hero): тёплый off-black */
+  --color-ink: #1b1510;
+  --color-ink-raised: #292219;
+  --color-on-ink: #f6efe3;
+  --color-on-ink-muted: rgba(246, 239, 227, 0.72);
+  --color-accent-soft: #f0a878;
 
   --md-sys-shape-corner-none: 0;
   --md-sys-shape-corner-extra-small: 4px;
   --md-sys-shape-corner-small: 8px;
   --md-sys-shape-corner-medium: 12px;
   --md-sys-shape-corner-large: 16px;
-  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-extra-large: 24px;
   --md-sys-shape-corner-full: 9999px;
 
   --md-sys-state-hover-opacity: 0.08;
@@ -53,65 +64,68 @@
   --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
   --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
   --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  /* Пружинная кривая для hover/press-микровзаимодействий */
+  --motion-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --md-sys-motion-duration-short: 200ms;
   --md-sys-motion-duration-medium: 300ms;
   --md-sys-motion-duration-long: 500ms;
 
+  /* Тени, тонированные в тёплый оттенок фона */
   --md-sys-elevation-level1:
-    0 1px 2px 0 rgba(0, 0, 0, 0.3),
-    0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    0 1px 2px 0 rgba(66, 48, 28, 0.16),
+    0 1px 3px 1px rgba(66, 48, 28, 0.08);
   --md-sys-elevation-level2:
-    0 1px 2px 0 rgba(0, 0, 0, 0.3),
-    0 2px 6px 2px rgba(0, 0, 0, 0.15);
+    0 1px 2px 0 rgba(66, 48, 28, 0.16),
+    0 2px 6px 2px rgba(66, 48, 28, 0.09);
   --md-sys-elevation-level3:
-    0 4px 8px 3px rgba(0, 0, 0, 0.15),
-    0 1px 3px rgba(0, 0, 0, 0.3);
+    0 4px 8px 3px rgba(66, 48, 28, 0.09),
+    0 1px 3px rgba(66, 48, 28, 0.16);
 
   --md-sys-typescale-display-large-font: var(--md-ref-typeface-brand);
   --md-sys-typescale-display-large-size: 3.5625rem;
-  --md-sys-typescale-display-large-line-height: 4rem;
-  --md-sys-typescale-display-large-weight: 400;
-  --md-sys-typescale-display-large-tracking: -0.015625rem;
+  --md-sys-typescale-display-large-line-height: 1.05;
+  --md-sys-typescale-display-large-weight: 600;
+  --md-sys-typescale-display-large-tracking: -0.02em;
   --md-sys-typescale-headline-large-font: var(--md-ref-typeface-brand);
-  --md-sys-typescale-headline-large-size: 2rem;
-  --md-sys-typescale-headline-large-line-height: 2.5rem;
-  --md-sys-typescale-headline-large-weight: 400;
-  --md-sys-typescale-headline-large-tracking: 0;
+  --md-sys-typescale-headline-large-size: clamp(1.6rem, 5vw, 2.25rem);
+  --md-sys-typescale-headline-large-line-height: 1.12;
+  --md-sys-typescale-headline-large-weight: 600;
+  --md-sys-typescale-headline-large-tracking: -0.015em;
   --md-sys-typescale-headline-medium-font: var(--md-ref-typeface-brand);
-  --md-sys-typescale-headline-medium-size: 1.75rem;
-  --md-sys-typescale-headline-medium-line-height: 2.25rem;
-  --md-sys-typescale-headline-medium-weight: 400;
-  --md-sys-typescale-headline-medium-tracking: 0;
+  --md-sys-typescale-headline-medium-size: clamp(1.3rem, 4vw, 1.75rem);
+  --md-sys-typescale-headline-medium-line-height: 1.18;
+  --md-sys-typescale-headline-medium-weight: 600;
+  --md-sys-typescale-headline-medium-tracking: -0.01em;
   --md-sys-typescale-title-large-font: var(--md-ref-typeface-plain);
-  --md-sys-typescale-title-large-size: 1.375rem;
-  --md-sys-typescale-title-large-line-height: 1.75rem;
-  --md-sys-typescale-title-large-weight: 400;
-  --md-sys-typescale-title-large-tracking: 0;
+  --md-sys-typescale-title-large-size: 1.25rem;
+  --md-sys-typescale-title-large-line-height: 1.4;
+  --md-sys-typescale-title-large-weight: 600;
+  --md-sys-typescale-title-large-tracking: -0.01em;
   --md-sys-typescale-title-medium-font: var(--md-ref-typeface-plain);
   --md-sys-typescale-title-medium-size: 1rem;
-  --md-sys-typescale-title-medium-line-height: 1.5rem;
-  --md-sys-typescale-title-medium-weight: 500;
-  --md-sys-typescale-title-medium-tracking: 0.009375rem;
+  --md-sys-typescale-title-medium-line-height: 1.5;
+  --md-sys-typescale-title-medium-weight: 600;
+  --md-sys-typescale-title-medium-tracking: 0;
   --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
   --md-sys-typescale-body-large-size: 1rem;
-  --md-sys-typescale-body-large-line-height: 1.5rem;
+  --md-sys-typescale-body-large-line-height: 1.6;
   --md-sys-typescale-body-large-weight: 400;
-  --md-sys-typescale-body-large-tracking: 0.03125rem;
+  --md-sys-typescale-body-large-tracking: 0.005em;
   --md-sys-typescale-body-medium-font: var(--md-ref-typeface-plain);
   --md-sys-typescale-body-medium-size: 0.875rem;
-  --md-sys-typescale-body-medium-line-height: 1.25rem;
+  --md-sys-typescale-body-medium-line-height: 1.45;
   --md-sys-typescale-body-medium-weight: 400;
-  --md-sys-typescale-body-medium-tracking: 0.015625rem;
+  --md-sys-typescale-body-medium-tracking: 0.01em;
   --md-sys-typescale-label-large-font: var(--md-ref-typeface-plain);
   --md-sys-typescale-label-large-size: 0.875rem;
-  --md-sys-typescale-label-large-line-height: 1.25rem;
-  --md-sys-typescale-label-large-weight: 500;
-  --md-sys-typescale-label-large-tracking: 0.00625rem;
+  --md-sys-typescale-label-large-line-height: 1.25;
+  --md-sys-typescale-label-large-weight: 600;
+  --md-sys-typescale-label-large-tracking: 0.01em;
   --md-sys-typescale-label-medium-font: var(--md-ref-typeface-plain);
   --md-sys-typescale-label-medium-size: 0.75rem;
-  --md-sys-typescale-label-medium-line-height: 1rem;
-  --md-sys-typescale-label-medium-weight: 500;
-  --md-sys-typescale-label-medium-tracking: 0.03125rem;
+  --md-sys-typescale-label-medium-line-height: 1.35;
+  --md-sys-typescale-label-medium-weight: 600;
+  --md-sys-typescale-label-medium-tracking: 0.06em;
 }
 
 *,
@@ -126,7 +140,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   background: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
@@ -189,8 +203,29 @@ ol {
   color: var(--md-sys-color-on-primary-container);
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.625rem 1rem;
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--color-ink);
+  color: var(--color-on-ink);
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  transform: translateY(-200%);
+  transition: transform var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
 .app-shell {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -201,7 +236,7 @@ ol {
 
 .md3-page {
   min-height: 100%;
-  padding: 5.25rem 1rem 3rem;
+  padding: 5.25rem 1rem 4.5rem;
 }
 
 .md3-container {
@@ -230,10 +265,20 @@ ol {
   line-height: var(--md-sys-typescale-label-large-line-height);
   letter-spacing: var(--md-sys-typescale-label-large-tracking);
   transition:
+    transform var(--md-sys-motion-duration-short) var(--motion-easing-spring),
     background-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
     border-color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
     color var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard),
     box-shadow var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.md3-button:hover {
+  transform: translateY(-1px);
+}
+
+.md3-button:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
 }
 
 .md3-button:focus-visible {
@@ -247,7 +292,7 @@ ol {
 }
 
 .md3-button--filled:hover {
-  background: color-mix(in srgb, var(--md-sys-color-primary) 92%, var(--md-sys-color-on-primary) 8%);
+  background: color-mix(in srgb, var(--md-sys-color-primary) 88%, #1b1510 12%);
 }
 
 .md3-button--tonal {
@@ -311,12 +356,25 @@ ol {
 }
 
 .md3-eyebrow {
-  color: var(--md-sys-color-on-surface-variant);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--md-sys-color-primary);
   font-family: var(--md-sys-typescale-label-medium-font);
   font-size: var(--md-sys-typescale-label-medium-size);
   font-weight: var(--md-sys-typescale-label-medium-weight);
   line-height: var(--md-sys-typescale-label-medium-line-height);
-  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.md3-eyebrow::before {
+  content: "";
+  width: 1.25rem;
+  height: 2px;
+  flex: 0 0 auto;
+  border-radius: 1px;
+  background: currentColor;
 }
 
 .md3-section-title {
@@ -335,8 +393,12 @@ ol {
 }
 
 @media (min-width: 1080px) {
+  :root {
+    --layout-nav-w: min(23rem, 31vw);
+  }
+
   .app-shell__body {
-    padding-left: min(23rem, 31vw);
+    padding-left: var(--layout-nav-w);
   }
 
   .md3-page {
