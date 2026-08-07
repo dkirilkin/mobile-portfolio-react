@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { DemoAccessCard } from "@/components/demo-access-card";
 import { MarkdownContent } from "@/components/markdown-content";
 import { ProjectCarousel } from "@/components/project-carousel";
+import { getCaseBySlug } from "@/data/cases";
 import { getProjectBySlug, getSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
@@ -46,6 +48,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const caseItem = project.caseSlug ? getCaseBySlug(project.caseSlug) : null;
+
   return (
     <main className={`md3-page ${styles.page}`}>
       <div className={`md3-container ${styles.container}`}>
@@ -67,6 +71,18 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <p className={styles.metaLabel}>Категория</p>
                 <p className={styles.categoryValue}>{project.category}</p>
               </section>
+
+              {caseItem && (
+                <section className={styles.metaBlock}>
+                  <p className={styles.metaLabel}>Кейс</p>
+                  <Link
+                    href={`/cases/${caseItem.slug}`}
+                    className={styles.caseLink}
+                  >
+                    {caseItem.title}
+                  </Link>
+                </section>
+              )}
 
               <section className={styles.descriptionBlock}>
                 <MarkdownContent

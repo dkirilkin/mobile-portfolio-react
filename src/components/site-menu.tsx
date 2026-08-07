@@ -4,11 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { getSortedCases } from "@/data/cases";
 import { getSortedProjects } from "@/data/projects";
 
 import styles from "./site-menu.module.css";
 
 const menuProjects = getSortedProjects();
+const menuCases = getSortedCases();
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
@@ -138,7 +140,31 @@ export function SiteMenu() {
             >
               Главная
             </Link>
+          </div>
 
+          <div className={styles.menuGroup}>
+            <p className={styles.groupTitle}>Кейсы</p>
+            <div className={styles.linkList}>
+              {menuCases.map((caseItem) => {
+                const caseHref = `/cases/${caseItem.slug}`;
+                const isActive = pathname === caseHref;
+
+                return (
+                  <Link
+                    key={caseItem.slug}
+                    href={caseHref}
+                    onClick={closeMenu}
+                    className={projectLinkClass(isActive)}
+                  >
+                    {caseItem.title}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className={styles.menuGroup}>
+            <p className={styles.groupTitle}>Проекты</p>
             <Link
               href="/projects"
               onClick={closeMenu}
@@ -146,12 +172,10 @@ export function SiteMenu() {
                 pathname === "/projects" || pathname.startsWith("/projects/"),
               )}
             >
-              Проекты
+              Все проекты
             </Link>
-          </div>
 
-          <div className={styles.projectGroup}>
-            <div className={styles.projectList}>
+            <div className={styles.linkList}>
               {menuProjects.map((project) => {
                 const projectHref = `/projects/${project.slug}`;
                 const isActive = pathname === projectHref;

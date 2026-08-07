@@ -10,7 +10,7 @@ export default function ProjectsPage() {
     <main className={`md3-page ${styles.page}`}>
       <section className={`md3-container ${styles.container}`}>
         <div className={styles.header}>
-          <p className="md3-eyebrow">Каталог кейсов</p>
+          <p className="md3-eyebrow">Каталог проектов</p>
           <h1 className={styles.title}>Все проекты</h1>
           <p className={styles.description}>
             Подборка low-code и mobile кейсов: клиентские приложения,

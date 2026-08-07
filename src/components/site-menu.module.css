@@ -110,26 +110,33 @@
 }
 
 .primaryLinks,
-.projectList {
+.linkList {
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
 }
 
-.projectGroup {
+.menuGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
-  margin-top: -1rem;
+  gap: 0.5rem;
   padding-left: 1.125rem;
 }
 
-.projectList {
+.groupTitle {
+  color: var(--md-sys-color-on-surface);
+  font-size: var(--md-sys-typescale-label-medium-size);
+  font-weight: 700;
+  line-height: var(--md-sys-typescale-label-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+}
+
+.linkList {
   position: relative;
   padding-left: 1rem;
 }
 
-.projectList::before {
+.linkList::before {
   content: "";
   position: absolute;
   top: 0.375rem;

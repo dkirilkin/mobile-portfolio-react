@@ -184,7 +184,7 @@ export const projects: Project[] = [
     homeIconBg: "#774F83",
     homeDescription: "MVP интернет-магазина с корзиной, оплатой и личным кабинетом.",
     homeCategory: "E-commerce",
-    homeTags: ["FlutterFlow", "Supabase", "Xano"],
+    homeTags: ["Flutter", "Supabase", "Xano"],
     descriptionMarkdown: `
 Полноценное демо-приложение интернет-магазина одежды и обуви с оплатой через Ю-Кассу.
 
@@ -196,7 +196,7 @@ export const projects: Project[] = [
 - Интеграция с Ю-Кассой
 - Регистрация и авторизация
     `.trim(),
-    stack: "Backend: Supabase, Xano\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase, Xano\nFrontend: Flutter",
     demoAccessHTML: ecommerceDemoAccessHTML,
     screenshots: createScreenshots(
       "e-commerce",
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     homeIconBg: "#0055D5",
     homeDescription: "Когнитивный дневник для анализа эмоций и мыслей.",
     homeCategory: "Mental Health",
-    homeTags: ["FlutterFlow", "Supabase", "Xano"],
+    homeTags: ["Flutter", "Supabase", "Xano"],
     descriptionMarkdown: `
 Приложение для ведения когнитивного дневника в рамках современных подходов КПТ и РЭПТ. Помогает анализировать эмоции, выявлять деструктивные мысли и менять шаблоны мышления.
 
@@ -238,7 +238,7 @@ export const projects: Project[] = [
 - Комплексное оспаривание нескольких негативных мыслей, относящихся к одной записи
 - Обучающий тур и примеры
     `.trim(),
-    stack: "Backend: Supabase, Xano\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase, Xano\nFrontend: Flutter",
     demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "cognitivy",
@@ -256,29 +256,33 @@ export const projects: Project[] = [
   {
     order: 5,
     isOnHome: true,
-    slug: "e-dy-clients",
-    title: "Доставка товаров: для клиентов",
-    category: "Электронная коммерция / Доставка",
-    homeTitle: "Аналог Самоката: клиентам",
-    homeIconPath: "/images/svg_icons/pedal_bike.svg",
+    slug: "goods-delivery-clients",
+    title: "Доставка товаров: приложение для клиентов",
+    category: "E-commerce / Доставка товаров",
+    homeTitle: "Доставка товаров: клиенты",
+    homeIconPath: "/images/svg_icons/shopping_bag.svg",
     homeIconBg: "#EA570F",
-    homeDescription: "Приложения для клиентов - заказ товаров для доставки",
+    homeDescription: "Каталог, корзина, оформление заказа и история покупок.",
     homeCategory: "Delivery",
-    homeTags: ["FlutterFlow", "Supabase", "Laravel"],
+    homeTags: ["Flutter", "Supabase"],
     descriptionMarkdown: `
-Приложение для курьеров, упрощающее процесс доставки товаров из darkstore до клиента. Четкий пошаговый алгоритм исключает путаницу и пропуск важных действий.
+Клиентское приложение для сервиса доставки товаров из darkstore. Пользователь проходит весь путь: авторизуется, выбирает товары в каталоге, собирает корзину, оформляет заказ и возвращается к истории покупок в профиле.
 
 ## Что внутри
 
-- Удобный выбор эмоций по категориям
-- Анализ мыслей с маркировкой когнитивных искажений
-- Комплексное оспаривание нескольких негативных мыслей, относящихся к одной записи
-- Обучающий тур и примеры
+- Авторизация
+- Каталог товаров
+- Карточки товаров
+- Корзина
+- Оформление заказа
+- Профиль клиента
+- История заказов с детальной информацией по каждому заказу
     `.trim(),
-    stack: "Backend: Supabase, Xano\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase\nFrontend: Flutter",
     demoAccessHTML: requestDemoAccessHTML,
+    caseSlug: "goods-delivery",
     screenshots: createScreenshots(
-      "e-dy clients",
+      "goods-delivery-clients",
       [
         "01.jpg",
         "02.jpg",
@@ -286,38 +290,40 @@ export const projects: Project[] = [
         "05.jpg",
         "06.jpg",
         "07.jpg",
-        "09.jpg"
+        "09.jpg",
       ],
-      "Cognitivy",
+      "Доставка товаров: приложение для клиентов",
     ),
   },
   {
-    order: 5,
+    order: 7,
     isOnHome: true,
-    slug: "e-dy-delivery",
-    title: "Доставка товаров: для курьеров",
-    category: "Электронная коммерция / Доставка",
-    homeTitle: "Аналог Самоката: курьерам",
+    slug: "goods-delivery-couriers",
+    title: "Доставка товаров: приложение для курьеров",
+    category: "E-commerce / Доставка товаров",
+    homeTitle: "Доставка товаров: курьеры",
     homeIconPath: "/images/svg_icons/pedal_bike.svg",
     homeIconBg: "#EA570F",
-    homeDescription: "Пошаговое приложение для курьеров darkstore.",
+    homeDescription: "Заказы, маршрут и пошаговое выполнение доставки до клиента.",
     homeCategory: "Delivery",
-    homeTags: ["FlutterFlow", "Supabase", "Laravel"],
+    homeTags: ["Flutter", "Supabase"],
     descriptionMarkdown: `
-Приложение для курьеров, упрощающее процесс доставки товаров из darkstore до клиента. Четкий пошаговый алгоритм исключает путаницу и пропуск важных действий.
+Курьерское приложение для доставки заказов из darkstore до клиента. Интерфейс помогает принять заказ, пройти этапы доставки и передать актуальные статусы в систему без лишних действий.
 
 ## Что внутри
 
-- Очередь заказов
-- Пошаговая система доставки
-- История заказов
-- Авторизация и личный кабинет
-- Удобный интерфейс
+- Очередь доступных и активных заказов
+- Детальная карточка заказа
+- Пошаговый сценарий доставки
+- Обновление статусов выполнения
+- История доставок
+- Авторизация и профиль курьера
     `.trim(),
-    stack: "Backend: Supabase, PHP (Laravel)\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase\nFrontend: Flutter",
     demoAccessHTML: requestDemoAccessHTML,
+    caseSlug: "goods-delivery",
     screenshots: createScreenshots(
-      "e-dy-delivery",
+      "goods-delivery-couriers",
       [
         "D Step 1.webp",
         "D Step 2.webp",
@@ -327,37 +333,39 @@ export const projects: Project[] = [
         "D Order.webp",
         "D Orders.webp",
       ],
-      "Аналог Самоката: курьерам",
+      "Доставка товаров: приложение для курьеров",
     ),
   },
   {
     order: 6,
     isOnHome: true,
-    slug: "e-dy-picking",
-    title: "Аналог Самоката: сборщикам",
-    category: "Электронная коммерция / Доставка",
-    homeTitle: "Аналог Самоката: сборщикам",
+    slug: "goods-delivery-picking",
+    title: "Доставка товаров: приложение для сборщиков",
+    category: "E-commerce / Доставка товаров",
+    homeTitle: "Доставка товаров: сборщики",
     homeIconPath: "/images/svg_icons/box.svg",
     homeIconBg: "#EA570F",
-    homeDescription: "Внутренний инструмент для сборщиков склада.",
+    homeDescription: "Сборка заказов на складе с контролем товаров и ошибок.",
     homeCategory: "Operations",
-    homeTags: ["FlutterFlow", "Supabase", "Laravel"],
+    homeTags: ["Flutter", "Supabase"],
     descriptionMarkdown: `
-Внутреннее приложение для сотрудников darkstore, обеспечивающее быструю и безошибочную сборку товаров.
+Внутреннее приложение для сборщиков darkstore. Помогает быстро собрать заказ по позициям, проверить товары через сканирование или ручной ввод и передать готовую корзину на следующий этап доставки.
 
 ## Что внутри
 
-- Очередь заказов
-- Пошаговая сборка заказов
+- Очередь заказов на сборку
+- Детальная карточка заказа с позициями
+- Пошаговая сборка товаров
 - Сканирование товаров с помощью bluetooth-сканера или ввод кодов вручную
-- Встроенный контроль ошибок
-- История заказов
+- Контроль ошибок при сборке
+- История собранных заказов
 - Авторизация
     `.trim(),
-    stack: "Backend: Supabase, PHP (Laravel)\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase\nFrontend: Flutter",
     demoAccessHTML: requestDemoAccessHTML,
+    caseSlug: "goods-delivery",
     screenshots: createScreenshots(
-      "e-dy-picking",
+      "goods-delivery-picking",
       [
         "P Step 1.webp",
         "P Step 2.webp",
@@ -366,7 +374,7 @@ export const projects: Project[] = [
         "P Order.webp",
         "P Orders.webp",
       ],
-      "Аналог Самоката: сборщикам",
+      "Доставка товаров: приложение для сборщиков",
     ),
   },
   {
@@ -380,7 +388,7 @@ export const projects: Project[] = [
     homeIconBg: "#3B608F",
     homeDescription: "Поиск и выполнение заказов для водителей грузовиков.",
     homeCategory: "Logistics",
-    homeTags: ["FlutterFlow", "1C", "B2B"],
+    homeTags: ["Flutter", "1C", "B2B"],
     descriptionMarkdown: `
 Приложение для водителей грузовиков, которое упрощает поиск и выполнение заказов на перевозки. Позволяет быстро находить подходящие грузы, просматривать маршруты и управлять выполнением задач.
 
@@ -391,7 +399,7 @@ export const projects: Project[] = [
 - Принятие и завершение заказа
 - Авторизация и профиль
     `.trim(),
-    stack: "Backend: 1C http-сервис\nFrontend: FlutterFlow",
+    stack: "Backend: 1C http-сервис\nFrontend: Flutter",
     demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "freight-transportation",
@@ -416,7 +424,7 @@ export const projects: Project[] = [
     homeIconBg: "#33618D",
     homeDescription: "Учет доходов и расходов, аналитика для духовной организации.",
     homeCategory: "Finance",
-    homeTags: ["FlutterFlow", "Supabase", "Analytics"],
+    homeTags: ["Flutter", "Supabase", "Analytics"],
     descriptionMarkdown: `
 Приложение для учета пожертвований и расходов духовной организации с детальной аналитикой.
 
@@ -427,7 +435,7 @@ export const projects: Project[] = [
 - Аналитика и отчеты
 - Авторизация
     `.trim(),
-    stack: "Backend: Supabase\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase\nFrontend: Flutter",
     demoAccessHTML: requestDemoAccessHTML,
     screenshots: createScreenshots(
       "financal-tracker",
@@ -454,7 +462,7 @@ export const projects: Project[] = [
     homeIconBg: "#3E7C75",
     homeDescription: "Клиентское приложение для заказа мобильной зарядки авто.",
     homeCategory: "EV Charging",
-    homeTags: ["FlutterFlow", "Supabase", "Maps"],
+    homeTags: ["Flutter", "Supabase", "Maps"],
     descriptionMarkdown: `
 Клиентское мобильное приложение, являющееся частью экосистемы управления зарядкой электромобилей, включающей два мобильных приложения, десктопное приложение и OCPP-брокер для контроля зарядных станций. Приложение реализует полный цикл заказа мобильной зарядки с интеграцией геолокации, мониторинга и backend-сервисов. Backend построен на Supabase (PostgreSQL, Edge Functions, RPC-функции, Cron), с активным использованием всех ключевых возможностей платформы.
 
@@ -476,8 +484,9 @@ export const projects: Project[] = [
 - Cron-задачи для фоновых процессов и автоматизации
 - Реалтайм-обновления статусов заказов
     `.trim(),
-    stack: "Backend: Supabase (PostgreSQL, Edge Functions, RPC, Cron)\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase (PostgreSQL, Edge Functions, RPC, Cron)\nFrontend: Flutter",
     demoAccessHTML: evClientsDemoAccessHTML,
+    caseSlug: "ev-charging",
     screenshots: createScreenshots(
       "ev-clients",
       [
@@ -500,7 +509,7 @@ export const projects: Project[] = [
     homeIconBg: "#3E7C75",
     homeDescription: "Приложение для техников с маршрутами, заказами и статусами.",
     homeCategory: "Field Service",
-    homeTags: ["FlutterFlow", "Supabase", "Realtime"],
+    homeTags: ["Flutter", "Supabase", "Realtime"],
     descriptionMarkdown: `
 Мобильное приложение для техника, являющееся частью экосистемы управления зарядкой электромобилей, включающей клиентское приложение, десктопное решение и OCPP-брокер. Приложение обеспечивает управление заказами и выполнение маршрута с поэтапной передачей статусов в backend в реальном времени. Реализована интеграция с навигацией и системой мониторинга выполнения зарядки.
 
@@ -521,8 +530,9 @@ export const projects: Project[] = [
 - Использование API для управления заказами и маршрутами
 - Обработка состояний (state management) для жизненного цикла заказа
     `.trim(),
-    stack: "Backend: Supabase\nFrontend: FlutterFlow",
+    stack: "Backend: Supabase\nFrontend: Flutter",
     demoAccessHTML: requestDemoAccessHTML,
+    caseSlug: "ev-charging",
     screenshots: createScreenshots(
       "ev-technicians",
       [
