@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import { DemoAccessCard } from "@/components/demo-access-card";
 import { MarkdownContent } from "@/components/markdown-content";
 import { ProjectCarousel } from "@/components/project-carousel";
-import { getCaseBySlug } from "@/data/cases";
-import { getProjectBySlug, getSortedProjects } from "@/data/projects";
+import { getVisibleCaseBySlug } from "@/data/cases";
+import { getVisibleProjectBySlug, getVisibleSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
 
@@ -17,7 +17,7 @@ type ProjectPageProps = {
 };
 
 export async function generateStaticParams() {
-  return getSortedProjects().map((project) => ({
+  return getVisibleSortedProjects().map((project) => ({
     slug: project.slug,
   }));
 }
@@ -26,7 +26,7 @@ export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = getVisibleProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -42,13 +42,16 @@ export async function generateMetadata({
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = getVisibleProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
-  const caseItem = project.caseSlug ? getCaseBySlug(project.caseSlug) : null;
+  const caseItem =
+    project.caseSlug && project.isVisibleInCase
+      ? getVisibleCaseBySlug(project.caseSlug)
+      : null;
 
   return (
     <main className={`md3-page ${styles.page}`}>

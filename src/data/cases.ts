@@ -1,10 +1,11 @@
 import type { Case, Project } from "@/types/project";
 
-import { getProjectBySlug } from "@/data/projects";
+import { getVisibleCaseProjectBySlug } from "@/data/projects";
 
 export const cases: Case[] = [
   {
     order: 1,
+    isVisible: true,
     slug: "ev-charging",
     title: "Мобильная зарядка электромобилей",
     category: "Электромобили / Сервисная экосистема",
@@ -81,6 +82,7 @@ export const cases: Case[] = [
   },
   {
     order: 2,
+    isVisible: true,
     slug: "goods-delivery",
     title: "Доставка товаров из darkstore",
     category: "E-commerce / Доставка товаров",
@@ -171,14 +173,35 @@ export function getCaseBySlug(slug: string) {
   return cases.find((caseItem) => caseItem.slug === slug);
 }
 
+export function getVisibleCaseBySlug(slug: string) {
+  return cases.find((caseItem) => caseItem.slug === slug && caseItem.isVisible);
+}
+
 export function getSortedCases() {
   return [...cases].sort((firstCase, secondCase) => {
     return firstCase.order - secondCase.order;
   });
 }
 
+export function getVisibleSortedCases() {
+  return getSortedCases().filter((caseItem) => caseItem.isVisible);
+}
+
 export function getCaseProjects(caseItem: Case): Project[] {
   return caseItem.projectSlugs
-    .map((slug) => getProjectBySlug(slug))
+    .map((slug) => getVisibleCaseProjectBySlug(slug))
     .filter((project): project is Project => Boolean(project));
+}
+
+export function getCaseSystemNodes(caseItem: Case) {
+  return caseItem.systemNodes.map((node) => {
+    if (!node.projectSlug || getVisibleCaseProjectBySlug(node.projectSlug)) {
+      return node;
+    }
+
+    return {
+      ...node,
+      projectSlug: undefined,
+    };
+  });
 }

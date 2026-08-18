@@ -6,13 +6,13 @@ import { HeroProjectMarquee } from "@/components/hero-project-marquee";
 import { ProjectList } from "@/components/project-list";
 import { TelegramIcon } from "@/components/telegram-icon";
 import { TELEGRAM_URL, TELEGRAM_USERNAME } from "@/constants/contact";
-import { getSortedCases } from "@/data/cases";
-import { getSortedProjects } from "@/data/projects";
+import { getVisibleSortedCases } from "@/data/cases";
+import { getVisibleSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
 
-const sortedCases = getSortedCases();
-const sortedProjects = getSortedProjects();
+const sortedCases = getVisibleSortedCases();
+const sortedProjects = getVisibleSortedProjects();
 const homeProjects = sortedProjects
   .filter((project) => !project.caseSlug)
   .slice(0, 4);

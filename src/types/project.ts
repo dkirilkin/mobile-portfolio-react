@@ -1,6 +1,8 @@
 export type Project = {
   order: number;
   isOnHome: boolean;
+  isVisible: boolean;
+  isVisibleInCase: boolean;
   slug: string;
   title: string;
   category: string;
@@ -36,6 +38,7 @@ export type CaseSystemEdge = {
 
 export type Case = {
   order: number;
+  isVisible: boolean;
   slug: string;
   title: string;
   category: string;

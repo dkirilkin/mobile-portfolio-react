@@ -176,6 +176,8 @@ export const projects: Project[] = [
   {
     order: 1,
     isOnHome: true,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "e-commerce",
     title: "Онлайн покупки",
     category: "Электронная коммерция / Онлайн-покупки",
@@ -219,6 +221,8 @@ export const projects: Project[] = [
   {
     order: 4,
     isOnHome: true,
+    isVisible: false,
+    isVisibleInCase: true,
     slug: "cognitivy",
     title: "Cognitivy (психология)",
     category: "Психология / Саморазвитие",
@@ -256,6 +260,8 @@ export const projects: Project[] = [
   {
     order: 5,
     isOnHome: true,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "goods-delivery-clients",
     title: "Доставка товаров: приложение для клиентов",
     category: "E-commerce / Доставка товаров",
@@ -298,6 +304,8 @@ export const projects: Project[] = [
   {
     order: 7,
     isOnHome: true,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "goods-delivery-couriers",
     title: "Доставка товаров: приложение для курьеров",
     category: "E-commerce / Доставка товаров",
@@ -339,6 +347,8 @@ export const projects: Project[] = [
   {
     order: 6,
     isOnHome: true,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "goods-delivery-picking",
     title: "Доставка товаров: приложение для сборщиков",
     category: "E-commerce / Доставка товаров",
@@ -380,6 +390,8 @@ export const projects: Project[] = [
   {
     order: 8,
     isOnHome: false,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "freight-transportation",
     title: "Грузовые перевозки",
     category: "Логистика / Грузоперевозки",
@@ -416,6 +428,8 @@ export const projects: Project[] = [
   {
     order: 7,
     isOnHome: false,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "financal-tracker",
     title: "Финансовый трекер: учет доходов и расходов",
     category: "Финансы",
@@ -454,6 +468,8 @@ export const projects: Project[] = [
   {
     order: 2,
     isOnHome: false,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "ev-clients",
     title: "Зарядка электрокаров: для клиентов",
     category: "Электромобили / Мобильная зарядка",
@@ -501,6 +517,8 @@ export const projects: Project[] = [
   {
     order: 3,
     isOnHome: false,
+    isVisible: true,
+    isVisibleInCase: true,
     slug: "ev-technicians",
     title: "Зарядка электрокаров: для техников",
     category: "Электромобили / Мобильная зарядка",
@@ -549,12 +567,26 @@ export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);
 }
 
+export function getVisibleProjectBySlug(slug: string) {
+  return projects.find((project) => project.slug === slug && project.isVisible);
+}
+
+export function getVisibleCaseProjectBySlug(slug: string) {
+  const project = getVisibleProjectBySlug(slug);
+
+  return project?.isVisibleInCase ? project : undefined;
+}
+
 export function getSortedProjects() {
   return [...projects].sort((firstProject, secondProject) => {
     return firstProject.order - secondProject.order;
   });
 }
 
+export function getVisibleSortedProjects() {
+  return getSortedProjects().filter((project) => project.isVisible);
+}
+
 export function getHomeProjects() {
-  return getSortedProjects().filter((project) => project.isOnHome);
+  return getVisibleSortedProjects().filter((project) => project.isOnHome);
 }
