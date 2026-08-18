@@ -7,7 +7,12 @@ import { MarkdownContent } from "@/components/markdown-content";
 import { ProjectList } from "@/components/project-list";
 import { TelegramIcon } from "@/components/telegram-icon";
 import { TELEGRAM_URL } from "@/constants/contact";
-import { getCaseBySlug, getCaseProjects, getSortedCases } from "@/data/cases";
+import {
+  getCaseProjects,
+  getCaseSystemNodes,
+  getVisibleCaseBySlug,
+  getVisibleSortedCases,
+} from "@/data/cases";
 
 import styles from "./page.module.css";
 
@@ -36,7 +41,7 @@ type CasePageProps = {
 };
 
 export async function generateStaticParams() {
-  return getSortedCases().map((caseItem) => ({
+  return getVisibleSortedCases().map((caseItem) => ({
     slug: caseItem.slug,
   }));
 }
@@ -45,7 +50,7 @@ export async function generateMetadata({
   params,
 }: CasePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const caseItem = getCaseBySlug(slug);
+  const caseItem = getVisibleCaseBySlug(slug);
 
   if (!caseItem) {
     return {
@@ -61,13 +66,14 @@ export async function generateMetadata({
 
 export default async function CasePage({ params }: CasePageProps) {
   const { slug } = await params;
-  const caseItem = getCaseBySlug(slug);
+  const caseItem = getVisibleCaseBySlug(slug);
 
   if (!caseItem) {
     notFound();
   }
 
   const caseProjects = getCaseProjects(caseItem);
+  const systemNodes = getCaseSystemNodes(caseItem);
 
   return (
     <main className={`md3-page ${styles.page}`}>
@@ -86,7 +92,7 @@ export default async function CasePage({ params }: CasePageProps) {
         <section className={`md3-surface ${styles.systemSection}`}>
           <h2 className={styles.sectionTitle}>Как устроена система</h2>
           <CaseSystemMap
-            nodes={caseItem.systemNodes}
+            nodes={systemNodes}
             edges={caseItem.systemEdges}
           />
         </section>

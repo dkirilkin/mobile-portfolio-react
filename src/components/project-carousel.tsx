@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import styles from "./project-carousel.module.css";
 
@@ -70,8 +70,66 @@ export function ProjectCarousel({
 }: ProjectCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [railScrollState, setRailScrollState] = useState({
+    canScrollNext: false,
+    canScrollPrevious: false,
+  });
+  const railRef = useRef<HTMLDivElement>(null);
 
   const hasLightboxOpen = lightboxIndex !== null;
+
+  const updateRailScrollState = useCallback(() => {
+    const rail = railRef.current;
+
+    if (!rail) {
+      return;
+    }
+
+    const maxScrollLeft = rail.scrollWidth - rail.clientWidth;
+
+    setRailScrollState({
+      canScrollPrevious: rail.scrollLeft > 1,
+      canScrollNext: rail.scrollLeft < maxScrollLeft - 1,
+    });
+  }, []);
+
+  const scrollRail = (direction: -1 | 1) => {
+    const rail = railRef.current;
+
+    if (!rail) {
+      return;
+    }
+
+    const firstSlide = rail.querySelector<HTMLElement>(`.${styles.slide}`);
+    const slideWidth = firstSlide?.getBoundingClientRect().width ?? rail.clientWidth * 0.8;
+
+    rail.scrollBy({
+      left: direction * (slideWidth + 8),
+      behavior: "smooth",
+    });
+  };
+
+  const handleRailWheel = useCallback((event: WheelEvent) => {
+    const rail = railRef.current;
+
+    if (!rail || Math.abs(event.deltaX) >= Math.abs(event.deltaY)) {
+      return;
+    }
+
+    const maxScrollLeft = rail.scrollWidth - rail.clientWidth;
+    const nextScrollLeft = rail.scrollLeft + event.deltaY;
+    const canMove =
+      (event.deltaY < 0 && rail.scrollLeft > 0) ||
+      (event.deltaY > 0 && rail.scrollLeft < maxScrollLeft);
+
+    if (!canMove) {
+      return;
+    }
+
+    event.preventDefault();
+    rail.scrollLeft = Math.max(0, Math.min(maxScrollLeft, nextScrollLeft));
+    updateRailScrollState();
+  }, [updateRailScrollState]);
 
   const openLightbox = (index: number) => {
     setActiveIndex(index);
@@ -93,6 +151,26 @@ export function ProjectCarousel({
     },
     [screenshots.length],
   );
+
+  useEffect(() => {
+    const rail = railRef.current;
+
+    if (!rail) {
+      return;
+    }
+
+    updateRailScrollState();
+
+    rail.addEventListener("scroll", updateRailScrollState, { passive: true });
+    rail.addEventListener("wheel", handleRailWheel, { passive: false });
+    window.addEventListener("resize", updateRailScrollState);
+
+    return () => {
+      rail.removeEventListener("scroll", updateRailScrollState);
+      rail.removeEventListener("wheel", handleRailWheel);
+      window.removeEventListener("resize", updateRailScrollState);
+    };
+  }, [handleRailWheel, screenshots.length, updateRailScrollState]);
 
   useEffect(() => {
     if (!hasLightboxOpen) {
@@ -126,31 +204,57 @@ export function ProjectCarousel({
 
   return (
     <section className={styles.root}>
-      <div className={styles.rail}>
-        {screenshots.map((screenshot, index) => (
-          <button
-            key={screenshot.src}
-            type="button"
-            onClick={() => openLightbox(index)}
-            className={[styles.slide, activeIndex === index ? styles.slideActive : ""]
-              .join(" ")
-              .trim()}
-            aria-label={`Открыть скриншот ${index + 1} проекта ${title}`}
-          >
-            <div className={styles.frame}>
-              <div className={styles.screen}>
-                <Image
-                  src={screenshot.src}
-                  alt={screenshot.alt}
-                  fill
-                  sizes="(min-width: 1024px) 204px, 152px"
-                  className={styles.image}
-                  priority={index === 0}
-                />
+      <div className={styles.railToolbar} aria-label={`Навигация по скриншотам проекта ${title}`}>
+        <button
+          type="button"
+          onClick={() => scrollRail(-1)}
+          className={styles.railControl}
+          disabled={!railScrollState.canScrollPrevious}
+          aria-label="Прокрутить карусель назад"
+        >
+          <PreviousIcon />
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollRail(1)}
+          className={styles.railControl}
+          disabled={!railScrollState.canScrollNext}
+          aria-label="Прокрутить карусель вперёд"
+        >
+          <NextIcon />
+        </button>
+      </div>
+
+      <div className={styles.railShell}>
+        <div
+          ref={railRef}
+          className={styles.rail}
+        >
+          {screenshots.map((screenshot, index) => (
+            <button
+              key={screenshot.src}
+              type="button"
+              onClick={() => openLightbox(index)}
+              className={[styles.slide, activeIndex === index ? styles.slideActive : ""]
+                .join(" ")
+                .trim()}
+              aria-label={`Открыть скриншот ${index + 1} проекта ${title}`}
+            >
+              <div className={styles.frame}>
+                <div className={styles.screen}>
+                  <Image
+                    src={screenshot.src}
+                    alt={screenshot.alt}
+                    fill
+                    sizes="(min-width: 1024px) 204px, 152px"
+                    className={styles.thumbnailImage}
+                    priority={index === 0}
+                  />
+                </div>
               </div>
-            </div>
-          </button>
-        ))}
+            </button>
+          ))}
+        </div>
       </div>
 
       {hasLightboxOpen ? (
@@ -162,6 +266,10 @@ export function ProjectCarousel({
           onClick={() => setLightboxIndex(null)}
         >
           <div className={styles.lightboxInner} onClick={(event) => event.stopPropagation()}>
+            <div className={styles.counter}>
+              {lightboxIndex + 1} / {screenshots.length}
+            </div>
+
             <button
               type="button"
               onClick={() => setLightboxIndex(null)}
@@ -171,38 +279,38 @@ export function ProjectCarousel({
               <CloseIcon />
             </button>
 
-            <button
-              type="button"
-              onClick={() => moveLightbox(-1)}
-              className={[styles.control, styles.sideControl, styles.leftControl].join(" ")}
-              aria-label="Предыдущее изображение"
-            >
-              <PreviousIcon />
-            </button>
+            <div className={styles.lightboxStage}>
+              <button
+                type="button"
+                onClick={() => moveLightbox(-1)}
+                className={[styles.control, styles.sideControl, styles.leftControl].join(" ")}
+                aria-label="Предыдущее изображение"
+              >
+                <PreviousIcon />
+                <span className={styles.controlText}>Назад</span>
+              </button>
 
-            <div className={styles.lightboxFrame}>
-              <div className={styles.counter}>
-                {lightboxIndex + 1} / {screenshots.length}
+              <div className={styles.lightboxFrame}>
+                <div className={styles.lightboxScreen}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={screenshots[lightboxIndex].src}
+                    alt={screenshots[lightboxIndex].alt}
+                    className={styles.lightboxImage}
+                  />
+                </div>
               </div>
-              <div className={styles.lightboxScreen}>
-                <Image
-                  src={screenshots[lightboxIndex].src}
-                  alt={screenshots[lightboxIndex].alt}
-                  fill
-                  sizes="100vw"
-                  className={styles.image}
-                />
-              </div>
+
+              <button
+                type="button"
+                onClick={() => moveLightbox(1)}
+                className={[styles.control, styles.sideControl, styles.rightControl].join(" ")}
+                aria-label="Следующее изображение"
+              >
+                <span className={styles.controlText}>Вперёд</span>
+                <NextIcon />
+              </button>
             </div>
-
-            <button
-              type="button"
-              onClick={() => moveLightbox(1)}
-              className={[styles.control, styles.sideControl, styles.rightControl].join(" ")}
-              aria-label="Следующее изображение"
-            >
-              <NextIcon />
-            </button>
           </div>
         </div>
       ) : null}

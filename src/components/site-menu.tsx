@@ -4,13 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { getSortedCases } from "@/data/cases";
-import { getSortedProjects } from "@/data/projects";
+import { getVisibleSortedCases } from "@/data/cases";
+import { getVisibleSortedProjects } from "@/data/projects";
 
 import styles from "./site-menu.module.css";
 
-const menuProjects = getSortedProjects();
-const menuCases = getSortedCases();
+const menuProjects = getVisibleSortedProjects();
+const menuCases = getVisibleSortedCases();
 
 function MenuIcon({ open }: { open: boolean }) {
   return (

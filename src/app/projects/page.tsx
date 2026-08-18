@@ -1,9 +1,9 @@
 import { ProjectList } from "@/components/project-list";
-import { getSortedProjects } from "@/data/projects";
+import { getVisibleSortedProjects } from "@/data/projects";
 
 import styles from "./page.module.css";
 
-const allProjects = getSortedProjects();
+const allProjects = getVisibleSortedProjects();
 
 export default function ProjectsPage() {
   return (
