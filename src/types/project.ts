@@ -43,6 +43,7 @@ export type Case = {
   title: string;
   category: string;
   summary: string;
+  contribution?: string;
   challengeMarkdown: string;
   resultMarkdown: string;
   systemNodes: CaseSystemNode[];

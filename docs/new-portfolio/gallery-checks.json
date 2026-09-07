@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "route": "/preview",
+      "width": 320,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview/cases/ev-charging",
+      "width": 320,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview/projects/ev-clients",
+      "width": 320,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview",
+      "width": 390,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview/cases/ev-charging",
+      "width": 390,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview/projects/ev-clients",
+      "width": 390,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview",
+      "width": 1440,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview/cases/ev-charging",
+      "width": 1440,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    },
+    {
+      "route": "/preview/projects/ev-clients",
+      "width": 1440,
+      "overflow": 0,
+      "clear": true,
+      "outside": true
+    }
+  ],
+  "errors": []
+}

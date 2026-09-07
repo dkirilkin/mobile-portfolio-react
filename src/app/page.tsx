@@ -1,277 +1,40 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
-
-import { CaseCard } from "@/components/case-card";
-import { HeroProjectMarquee } from "@/components/hero-project-marquee";
-import { ProjectList } from "@/components/project-list";
-import { TelegramIcon } from "@/components/telegram-icon";
-import { TELEGRAM_URL, TELEGRAM_USERNAME } from "@/constants/contact";
-import { getVisibleSortedCases } from "@/data/cases";
+import { openingWorks, portfolioAuthor, portfolioWorks } from "@/data/portfolio";
+import { Arrow } from "@/components/portfolio/arrow";
+import { WorkSection } from "@/components/portfolio/work-section";
+import { ProjectLinks } from "@/components/portfolio/project-links";
 import { getVisibleSortedProjects } from "@/data/projects";
+import styles from "@/styles/portfolio.module.css";
 
-import styles from "./page.module.css";
-
-const sortedCases = getVisibleSortedCases();
-const sortedProjects = getVisibleSortedProjects();
-const homeProjects = sortedProjects
-  .filter((project) => !project.caseSlug)
-  .slice(0, 4);
-const heroProjects = sortedProjects;
-
-const frontendStack = ["Flutter", "React", "Vue"];
-const backendStack = ["Supabase", "Firebase", "Xano", "n8n"];
-
-function AppleIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className={styles.platformIcon}
-      fill="currentColor"
-    >
-      <path d="M15.05 4.39c.62-.76 1.04-1.8.93-2.84-.9.04-1.99.6-2.63 1.35-.58.66-1.09 1.73-.95 2.74 1.01.08 2.03-.51 2.65-1.25Z" />
-      <path d="M19.09 14.94c-.41.94-.61 1.36-1.14 2.19-.74 1.15-1.79 2.58-3.1 2.59-1.17.01-1.47-.76-3.06-.75-1.59.01-1.93.76-3.1.75-1.31.01-2.3-1.29-3.05-2.44-2.1-3.21-2.32-6.98-1.02-8.98.92-1.41 2.36-2.24 3.72-2.24 1.39 0 2.27.76 3.42.76 1.12 0 1.81-.76 3.41-.76 1.21 0 2.49.66 3.41 1.8-2.98 1.64-2.5 5.91.51 7.08Z" />
-    </svg>
-  );
-}
-
-function AndroidIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className={styles.platformIcon}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-    >
-      <path d="M8 8.5h8a3.5 3.5 0 0 1 3.5 3.5V16a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2v-4A3.5 3.5 0 0 1 8 8.5Z" />
-      <path d="M9.5 5.5 8 7.8" />
-      <path d="m14.5 5.5 1.5 2.3" />
-      <path d="M8.5 18v2" />
-      <path d="M15.5 18v2" />
-      <circle cx="9.5" cy="12.5" r=".6" fill="currentColor" stroke="none" />
-      <circle cx="14.5" cy="12.5" r=".6" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function WebIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className={styles.platformIcon}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-    >
-      <rect x="3" y="5" width="18" height="14" rx="2.5" />
-      <path d="M3 9h18" />
-    </svg>
-  );
-}
-
-function ArrowForwardIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className={styles.sectionCtaIcon}
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.8"
-    >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  );
-}
-
-function PlatformChip({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <span className={`md3-pill ${styles.platformChip}`}>
-      {icon}
-      {label}
-    </span>
-  );
-}
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
-  return (
-    <main className={`md3-page ${styles.page}`}>
-      <section className={styles.heroBand}>
-        <div className={`md3-container ${styles.heroContainer}`}>
-          <div className={styles.heroGrid}>
-            <div className={styles.heroContent}>
-              <h1 className={styles.heroTitle}>Разработка MVP и цифровых продуктов</h1>
-              <p className={styles.heroDescription}>
-                Запускаю мобильные и веб-продукты с AI-ускоренной разработкой,
-                понятной архитектурой и фокусом на рабочий результат
-              </p>
-
-              <div className={styles.platformRow}>
-                <PlatformChip icon={<AppleIcon />} label="iOS" />
-                <PlatformChip icon={<AndroidIcon />} label="Android" />
-                <PlatformChip icon={<WebIcon />} label="Web" />
-              </div>
-
-              <div className={styles.heroActions}>
-                <Link
-                  href="#cases"
-                  className={`md3-button md3-button--filled ${styles.heroButtonPrimary}`}
-                >
-                  Смотреть кейсы
-                </Link>
-
-                <Link
-                  href={TELEGRAM_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`md3-button md3-button--outlined ${styles.heroButtonSecondary}`}
-                >
-                  <TelegramIcon className={styles.telegramIcon} />
-                  Написать в Telegram
-                </Link>
-              </div>
-            </div>
-
-            <div className={styles.heroMarqueeWrap}>
-              <HeroProjectMarquee projects={heroProjects} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="cases"
-        className={`md3-container ${styles.casesSection}`}
-      >
-        <div className={styles.sectionHeader}>
-          <div>
-            <p className="md3-eyebrow">Кейсы</p>
-            <h2 className="md3-section-title">Системы из нескольких приложений</h2>
-          </div>
-        </div>
-
-        <div className={styles.casesGrid}>
-          {sortedCases.map((caseItem) => (
-            <CaseCard key={caseItem.slug} caseItem={caseItem} />
-          ))}
-        </div>
-      </section>
-
-      <section className={`md3-container ${styles.projectsSection}`}>
-        <div className={styles.sectionHeader}>
-          <div>
-            <p className="md3-eyebrow">Работы</p>
-            <h2 className="md3-section-title">Отдельные проекты</h2>
-          </div>
-        </div>
-
-        <ProjectList projects={homeProjects} />
-
-        <Link href="/projects" className={`md3-button md3-button--filled ${styles.sectionCta}`}>
-          Все проекты
-          <ArrowForwardIcon />
-        </Link>
-      </section>
-
-      <section className={`md3-container ${styles.aboutSection}`}>
-        <div className={`md3-surface ${styles.profileCard}`}>
-          <div className={styles.profileRow}>
-            <Image
-              src="/images/dk_photo.webp"
-              alt="Фото Дмитрия Кирилкина"
-              width={88}
-              height={88}
-              className={styles.profileImage}
-            />
-
-            <div className={styles.profileCopy}>
-              <p className="md3-eyebrow">Обо мне</p>
-              <h2 className={styles.profileTitle}>AI-разработчик / Аналитик</h2>
-              <p className={styles.profileName}>Кирилкин Дмитрий</p>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.detailGrid}>
-          <article className={`md3-surface ${styles.detailCard}`}>
-            <p className="md3-eyebrow">Stack</p>
-            <h3 className={styles.cardTitle}>Инструменты разработки</h3>
-
-            <div className={styles.stackGrid}>
-              <div>
-                <p className={styles.stackTitle}>Frontend</p>
-                <div className={styles.stackList}>
-                  {frontendStack.map((item) => (
-                    <p key={item}>{item}</p>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <p className={styles.stackTitle}>Backend</p>
-                <div className={styles.stackList}>
-                  {backendStack.map((item) => (
-                    <p key={item}>{item}</p>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-          </article>
-
-          <article className={`md3-surface ${styles.detailCard}`}>
-            <p className="md3-eyebrow">Опыт</p>
-            <h3 className={styles.cardTitle}>Работал в найме</h3>
-            <p className={styles.cardText}>
-              Норникель, Астерос, X5 Group и др. на различных ролях в IT-проектах:
-              аналитик, project-менеджер, product-участник запуска.
-            </p>
-          </article>
-
-          <article className={`md3-surface ${styles.detailCard}`}>
-            <p className="md3-eyebrow">Контакты</p>
-            <h3 className={styles.cardTitle}>Связаться напрямую</h3>
-
-            <div className={styles.contactList}>
-              <div className={styles.contactRow}>
-                <p className={styles.contactLabel}>Локация</p>
-                <p className={styles.contactValue}>Россия, Брянск - Москва</p>
-              </div>
-
-              <div className={styles.contactRow}>
-                <p className={styles.contactLabel}>Telegram</p>
-                <p className={styles.contactValue}>{TELEGRAM_USERNAME}</p>
-              </div>
-            </div>
-
-            <Link
-              href={TELEGRAM_URL}
-              target="_blank"
-              rel="noreferrer"
-              className={`md3-button md3-button--filled ${styles.telegramButton}`}
-            >
-              <TelegramIcon className={styles.telegramIcon} />
-              Написать в Telegram
-            </Link>
-          </article>
-        </div>
-      </section>
-    </main>
-  );
+  return <main id="content">
+    <section className={styles.hero}>
+      <div className={styles.heroHeading}><h1>За каждым экраном —<br /><span>чья-то задача.</span></h1><div className={styles.author}><Image src={portfolioAuthor.portrait} width={72} height={72} alt={portfolioAuthor.name} /><p>{portfolioAuthor.name}<span>{portfolioAuthor.role}</span></p></div></div>
+      <div className={styles.openingGallery} aria-label="Разные задачи из портфолио">
+        {openingWorks.map((work, index) => <Link key={work.id} href={work.href!} className={styles.openingWork}>
+          <div className={styles.openingTitle}><h2>{work.shortTitle}</h2><Arrow diagonal /></div>
+          <Image src={work.images[0].src} width={work.images[0].width} height={work.images[0].height} alt={work.images[0].alt} sizes="(max-width: 760px) 30vw, 25vw" preload={index === 0} />
+          <p>{work.context}{work.status && <span>{work.status}</span>}</p>
+        </Link>)}
+      </div>
+      <div className={styles.heroNote}><p>Пользовательские приложения и рабочие инструменты.<br />Разные сценарии — от покупки до выполнения заказа.</p><div className={styles.linkGroup}><a href="#cases" className={styles.textLink}>Смотреть кейсы <Arrow /></a><Link href="/projects" className={styles.textLink}>Все работы <Arrow /></Link></div></div>
+    </section>
+    <section id="cases" className={styles.works}>
+      <div className={styles.sectionHeading}><h2>Кейсы</h2><p>Системы из нескольких приложений: общая задача, роли пользователей и связь между ними.</p></div>
+      {portfolioWorks.filter(work => work.id === "charging" || work.id === "delivery").map((work, index) => <WorkSection work={work} index={index} key={work.id} />)}
+    </section>
+    <section id="work" className={styles.catalogSection}>
+      <div className={styles.sectionHeading}><h2>Работы</h2><p>Отдельные проекты. У каждого — своя страница с описанием, интерфейсами и демо-доступом.</p></div>
+      <ProjectLinks projects={getVisibleSortedProjects().filter(project => !project.caseSlug)} />
+      <Link href="/projects" className={styles.textLink}>Все работы <Arrow /></Link>
+    </section>
+    <section id="about" className={styles.about}>
+      <Image src={portfolioAuthor.portrait} alt={portfolioAuthor.name} width={462} height={462} sizes="(max-width: 760px) 160px, 290px" />
+      <div><h2>Дмитрий Кирилкин</h2><p className={styles.aboutRole}>{portfolioAuthor.role}</p><p>В моём портфолио — приложения для клиентов, сотрудников и внутреннего учёта. Один из подробных примеров — разработка клиентского приложения и приложения техника для мобильной зарядки на Flutter + Supabase.</p><p>Есть опыт работы в IT-проектах в найме, в том числе в Норникеле, Астеросе и X5 Group: аналитика, управление проектами и участие в запуске продуктов.</p><Link href="/projects" className={styles.textLink}>Смотреть мои работы <Arrow /></Link></div>
+    </section>
+  </main>;
 }

@@ -11,6 +11,7 @@ type ProjectCarouselProps = {
     alt: string;
   }[];
   title: string;
+  presentation?: "framed" | "plain";
 };
 
 function CloseIcon() {
@@ -67,6 +68,7 @@ function NextIcon() {
 export function ProjectCarousel({
   screenshots,
   title,
+  presentation = "framed",
 }: ProjectCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -203,7 +205,7 @@ export function ProjectCarousel({
   }, [hasLightboxOpen, moveLightbox, screenshots.length]);
 
   return (
-    <section className={styles.root}>
+    <section className={`${styles.root} ${presentation === "plain" ? styles.plain : ""}`}>
       <div className={styles.railToolbar} aria-label={`Навигация по скриншотам проекта ${title}`}>
         <button
           type="button"

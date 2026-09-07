@@ -1,0 +1,304 @@
+{
+  "results": [
+    {
+      "route": "/preview",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/ev-charging",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/goods-delivery",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/e-commerce",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-clients",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-technicians",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-clients",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-picking",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-couriers",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/financal-tracker",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/freight-transportation",
+      "width": 320,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/ev-charging",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/goods-delivery",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/e-commerce",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-clients",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-technicians",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-clients",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-picking",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-couriers",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/financal-tracker",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/freight-transportation",
+      "width": 390,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/ev-charging",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/goods-delivery",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/e-commerce",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-clients",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-technicians",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-clients",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-picking",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-couriers",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/financal-tracker",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/freight-transportation",
+      "width": 768,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/ev-charging",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/cases/goods-delivery",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/e-commerce",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-clients",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/ev-technicians",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-clients",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-picking",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/goods-delivery-couriers",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/financal-tracker",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    },
+    {
+      "route": "/preview/projects/freight-transportation",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0
+    }
+  ],
+  "projects": [
+    "/preview/projects/e-commerce",
+    "/preview/projects/ev-clients",
+    "/preview/projects/ev-technicians",
+    "/preview/projects/goods-delivery-clients",
+    "/preview/projects/goods-delivery-picking",
+    "/preview/projects/goods-delivery-couriers",
+    "/preview/projects/financal-tracker",
+    "/preview/projects/freight-transportation"
+  ],
+  "journey": "passed",
+  "errors": []
+}

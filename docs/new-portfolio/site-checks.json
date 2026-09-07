@@ -1,0 +1,560 @@
+{
+  "results": [
+    {
+      "route": "/",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app"
+    },
+    {
+      "route": "/projects",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects"
+    },
+    {
+      "route": "/cases/ev-charging",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/ev-charging"
+    },
+    {
+      "route": "/cases/goods-delivery",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/goods-delivery"
+    },
+    {
+      "route": "/projects/e-commerce",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/e-commerce"
+    },
+    {
+      "route": "/projects/ev-clients",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-clients"
+    },
+    {
+      "route": "/projects/ev-technicians",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-technicians"
+    },
+    {
+      "route": "/projects/goods-delivery-clients",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-clients"
+    },
+    {
+      "route": "/projects/goods-delivery-picking",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-picking"
+    },
+    {
+      "route": "/projects/goods-delivery-couriers",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-couriers"
+    },
+    {
+      "route": "/projects/financal-tracker",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/financal-tracker"
+    },
+    {
+      "route": "/projects/freight-transportation",
+      "width": 320,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/freight-transportation"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app"
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects"
+    },
+    {
+      "route": "/cases/ev-charging",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/ev-charging"
+    },
+    {
+      "route": "/cases/goods-delivery",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/goods-delivery"
+    },
+    {
+      "route": "/projects/e-commerce",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/e-commerce"
+    },
+    {
+      "route": "/projects/ev-clients",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-clients"
+    },
+    {
+      "route": "/projects/ev-technicians",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-technicians"
+    },
+    {
+      "route": "/projects/goods-delivery-clients",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-clients"
+    },
+    {
+      "route": "/projects/goods-delivery-picking",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-picking"
+    },
+    {
+      "route": "/projects/goods-delivery-couriers",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-couriers"
+    },
+    {
+      "route": "/projects/financal-tracker",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/financal-tracker"
+    },
+    {
+      "route": "/projects/freight-transportation",
+      "width": 390,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/freight-transportation"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app"
+    },
+    {
+      "route": "/projects",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects"
+    },
+    {
+      "route": "/cases/ev-charging",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/ev-charging"
+    },
+    {
+      "route": "/cases/goods-delivery",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/goods-delivery"
+    },
+    {
+      "route": "/projects/e-commerce",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/e-commerce"
+    },
+    {
+      "route": "/projects/ev-clients",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-clients"
+    },
+    {
+      "route": "/projects/ev-technicians",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-technicians"
+    },
+    {
+      "route": "/projects/goods-delivery-clients",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-clients"
+    },
+    {
+      "route": "/projects/goods-delivery-picking",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-picking"
+    },
+    {
+      "route": "/projects/goods-delivery-couriers",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-couriers"
+    },
+    {
+      "route": "/projects/financal-tracker",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/financal-tracker"
+    },
+    {
+      "route": "/projects/freight-transportation",
+      "width": 768,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/freight-transportation"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app"
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects"
+    },
+    {
+      "route": "/cases/ev-charging",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/ev-charging"
+    },
+    {
+      "route": "/cases/goods-delivery",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/cases/goods-delivery"
+    },
+    {
+      "route": "/projects/e-commerce",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/e-commerce"
+    },
+    {
+      "route": "/projects/ev-clients",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-clients"
+    },
+    {
+      "route": "/projects/ev-technicians",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/ev-technicians"
+    },
+    {
+      "route": "/projects/goods-delivery-clients",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-clients"
+    },
+    {
+      "route": "/projects/goods-delivery-picking",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-picking"
+    },
+    {
+      "route": "/projects/goods-delivery-couriers",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/goods-delivery-couriers"
+    },
+    {
+      "route": "/projects/financal-tracker",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/financal-tracker"
+    },
+    {
+      "route": "/projects/freight-transportation",
+      "width": 1440,
+      "status": 200,
+      "overflow": 0,
+      "headings": 1,
+      "navs": 1,
+      "footers": 1,
+      "previewLinks": 0,
+      "canonical": "https://kirilkin.vercel.app/projects/freight-transportation"
+    }
+  ],
+  "redirects": [
+    [
+      "/preview",
+      "/"
+    ],
+    [
+      "/preview/projects",
+      "/projects"
+    ],
+    [
+      "/preview/charging",
+      "/cases/ev-charging"
+    ],
+    [
+      "/preview/cases/goods-delivery",
+      "/cases/goods-delivery"
+    ],
+    [
+      "/preview/projects/ev-clients",
+      "/projects/ev-clients"
+    ],
+    [
+      "/figma-demo",
+      "/"
+    ]
+  ],
+  "errors": [],
+  "testCorrection": "Canonical URL comparison normalized with URL.href: the root with and without a trailing slash is equivalent. Re-evaluated stored browser observations; no application changes."
+}

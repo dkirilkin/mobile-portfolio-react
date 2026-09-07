@@ -1,0 +1,5 @@
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@source "../components/portfolio";
+/* Preflight deliberately omitted: the prototype has its own scoped baseline. */

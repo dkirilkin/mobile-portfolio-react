@@ -1,0 +1,112 @@
+[
+  {
+    "route": "/preview",
+    "width": 320,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": null,
+    "reducedAnimation": null,
+    "errors": []
+  },
+  {
+    "route": "/preview",
+    "width": 390,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": null,
+    "reducedAnimation": null,
+    "errors": []
+  },
+  {
+    "route": "/preview",
+    "width": 768,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": null,
+    "reducedAnimation": null,
+    "errors": []
+  },
+  {
+    "route": "/preview",
+    "width": 1440,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": null,
+    "reducedAnimation": null,
+    "errors": []
+  },
+  {
+    "route": "/preview/charging",
+    "width": 320,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": true,
+    "reducedAnimation": true,
+    "errors": []
+  },
+  {
+    "route": "/preview/charging",
+    "width": 390,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": true,
+    "reducedAnimation": true,
+    "errors": []
+  },
+  {
+    "route": "/preview/charging",
+    "width": 768,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": true,
+    "reducedAnimation": true,
+    "errors": []
+  },
+  {
+    "route": "/preview/charging",
+    "width": 1440,
+    "status": 200,
+    "overflow": 0,
+    "opened": true,
+    "focusContained": true,
+    "focusRestored": true,
+    "closeWorks": true,
+    "roleWorks": true,
+    "reducedAnimation": true,
+    "errors": []
+  },
+  {
+    "noJavaScript": true,
+    "title": "За каждым экраном —чья-то задача.",
+    "works": 5,
+    "contact": 3
+  }
+]

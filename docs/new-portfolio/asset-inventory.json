@@ -1,0 +1,350 @@
+[
+  {
+    "file": "public/images/dk_photo.webp",
+    "width": 462,
+    "height": 462,
+    "bytes": 21604
+  },
+  {
+    "file": "public/images/hero_portfolio.webp",
+    "width": 960,
+    "height": 720,
+    "bytes": 60782
+  },
+  {
+    "file": "public/projects/cognitivy/C 1.webp",
+    "width": 660,
+    "height": 1389,
+    "bytes": 40506
+  },
+  {
+    "file": "public/projects/cognitivy/C 2.webp",
+    "width": 660,
+    "height": 1389,
+    "bytes": 34086
+  },
+  {
+    "file": "public/projects/cognitivy/C 3.webp",
+    "width": 660,
+    "height": 1389,
+    "bytes": 30448
+  },
+  {
+    "file": "public/projects/cognitivy/C 4.webp",
+    "width": 660,
+    "height": 1389,
+    "bytes": 28718
+  },
+  {
+    "file": "public/projects/cognitivy/C 5.webp",
+    "width": 660,
+    "height": 1389,
+    "bytes": 31300
+  },
+  {
+    "file": "public/projects/cognitivy/C 6.webp",
+    "width": 660,
+    "height": 1389,
+    "bytes": 28524
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Cart.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 46324
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Cart_Dark.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 45384
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Filter.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 51026
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Home.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 56516
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Order.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 51836
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Orders.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 61214
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Payment.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 55454
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Product.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 49084
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Product_Dark.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 52702
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Products.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 61594
+  },
+  {
+    "file": "public/projects/e-commerce/EС_Products_Dark.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 66284
+  },
+  {
+    "file": "public/projects/ev-clients/ev-home.webp",
+    "width": 810,
+    "height": 1440,
+    "bytes": 32834
+  },
+  {
+    "file": "public/projects/ev-clients/ev-map.webp",
+    "width": 810,
+    "height": 1440,
+    "bytes": 48494
+  },
+  {
+    "file": "public/projects/ev-clients/ev-orders.webp",
+    "width": 810,
+    "height": 1440,
+    "bytes": 26040
+  },
+  {
+    "file": "public/projects/ev-clients/ev-photos.webp",
+    "width": 810,
+    "height": 1440,
+    "bytes": 31284
+  },
+  {
+    "file": "public/projects/ev-technicians/evt-home.webp",
+    "width": 571,
+    "height": 1280,
+    "bytes": 24270
+  },
+  {
+    "file": "public/projects/ev-technicians/evt-route.webp",
+    "width": 571,
+    "height": 1280,
+    "bytes": 20048
+  },
+  {
+    "file": "public/projects/ev-technicians/evt-route2.webp",
+    "width": 571,
+    "height": 1280,
+    "bytes": 28024
+  },
+  {
+    "file": "public/projects/financal-tracker/M Add Payment.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 48828
+  },
+  {
+    "file": "public/projects/financal-tracker/M Home.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 41480
+  },
+  {
+    "file": "public/projects/financal-tracker/M Payment.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 31972
+  },
+  {
+    "file": "public/projects/financal-tracker/M Report 1.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 37906
+  },
+  {
+    "file": "public/projects/financal-tracker/M Report 2.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 42692
+  },
+  {
+    "file": "public/projects/financal-tracker/M Report 3.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 49266
+  },
+  {
+    "file": "public/projects/financal-tracker/M Report 4.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 35778
+  },
+  {
+    "file": "public/projects/freight-transportation/FT-Login.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 23292
+  },
+  {
+    "file": "public/projects/freight-transportation/FT-Order.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 87090
+  },
+  {
+    "file": "public/projects/freight-transportation/FT-Orders-Free.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 54972
+  },
+  {
+    "file": "public/projects/freight-transportation/FT-Orders-My.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 53130
+  },
+  {
+    "file": "public/projects/freight-transportation/FT-Profile.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 27694
+  },
+  {
+    "file": "public/projects/goods-delivery-clients/01.jpg",
+    "width": 570,
+    "height": 1280,
+    "bytes": 58137
+  },
+  {
+    "file": "public/projects/goods-delivery-clients/02.jpg",
+    "width": 570,
+    "height": 1280,
+    "bytes": 53921
+  },
+  {
+    "file": "public/projects/goods-delivery-clients/04.jpg",
+    "width": 570,
+    "height": 1280,
+    "bytes": 56895
+  },
+  {
+    "file": "public/projects/goods-delivery-clients/05.jpg",
+    "width": 570,
+    "height": 1280,
+    "bytes": 43412
+  },
+  {
+    "file": "public/projects/goods-delivery-clients/06.jpg",
+    "width": 570,
+    "height": 1280,
+    "bytes": 50512
+  },
+  {
+    "file": "public/projects/goods-delivery-clients/07.jpg",
+    "width": 570,
+    "height": 1280,
+    "bytes": 47861
+  },
+  {
+    "file": "public/projects/goods-delivery-clients/09.jpg",
+    "width": 570,
+    "height": 1280,
+    "bytes": 44038
+  },
+  {
+    "file": "public/projects/goods-delivery-couriers/D Order.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 37240
+  },
+  {
+    "file": "public/projects/goods-delivery-couriers/D Orders.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 23436
+  },
+  {
+    "file": "public/projects/goods-delivery-couriers/D Ready.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 19154
+  },
+  {
+    "file": "public/projects/goods-delivery-couriers/D Step 1.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 18532
+  },
+  {
+    "file": "public/projects/goods-delivery-couriers/D Step 2.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 30918
+  },
+  {
+    "file": "public/projects/goods-delivery-couriers/D Step 3.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 34872
+  },
+  {
+    "file": "public/projects/goods-delivery-couriers/D Step 4.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 54284
+  },
+  {
+    "file": "public/projects/goods-delivery-picking/P Order.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 65786
+  },
+  {
+    "file": "public/projects/goods-delivery-picking/P Orders.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 35128
+  },
+  {
+    "file": "public/projects/goods-delivery-picking/P Picked.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 24170
+  },
+  {
+    "file": "public/projects/goods-delivery-picking/P Step 1.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 58858
+  },
+  {
+    "file": "public/projects/goods-delivery-picking/P Step 2.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 31758
+  },
+  {
+    "file": "public/projects/goods-delivery-picking/P Step 3.webp",
+    "width": 1080,
+    "height": 2408,
+    "bytes": 17732
+  }
+]

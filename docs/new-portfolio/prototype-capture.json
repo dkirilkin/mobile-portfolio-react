@@ -1,0 +1,32 @@
+[
+  {
+    "route": "/preview",
+    "width": 1440,
+    "missingImages": []
+  },
+  {
+    "route": "/preview",
+    "width": 390,
+    "missingImages": []
+  },
+  {
+    "route": "/preview",
+    "width": 768,
+    "missingImages": []
+  },
+  {
+    "route": "/preview/charging",
+    "width": 1440,
+    "missingImages": []
+  },
+  {
+    "route": "/preview/charging",
+    "width": 390,
+    "missingImages": []
+  },
+  {
+    "route": "/preview/charging",
+    "width": 768,
+    "missingImages": []
+  }
+]

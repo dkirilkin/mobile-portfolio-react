@@ -1,25 +1,15 @@
-import { ProjectList } from "@/components/project-list";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ProjectLinks } from "@/components/portfolio/project-links";
 import { getVisibleSortedProjects } from "@/data/projects";
+import styles from "@/styles/portfolio.module.css";
 
-import styles from "./page.module.css";
-
-const allProjects = getVisibleSortedProjects();
+export const metadata: Metadata = { title: "Все работы", alternates: { canonical: "/projects" } };
 
 export default function ProjectsPage() {
-  return (
-    <main className={`md3-page ${styles.page}`}>
-      <section className={`md3-container ${styles.container}`}>
-        <div className={styles.header}>
-          <p className="md3-eyebrow">Каталог проектов</p>
-          <h1 className={styles.title}>Все проекты</h1>
-          <p className={styles.description}>
-            Подборка low-code и mobile кейсов: клиентские приложения,
-            внутренние инструменты и сервисные решения.
-          </p>
-        </div>
-
-        <ProjectList projects={allProjects} />
-      </section>
-    </main>
-  );
+  return <main id="content" className={styles.catalogPage}>
+    <Link href="/" className={styles.backLink}>На главную</Link>
+    <div className={styles.catalogHeading}><h1>Все работы</h1><p>Мобильные приложения для клиентов, сотрудников и внутреннего учёта. Откройте проект, чтобы изучить интерфейсы, описание и стек.</p></div>
+    <ProjectLinks projects={getVisibleSortedProjects()} />
+  </main>;
 }

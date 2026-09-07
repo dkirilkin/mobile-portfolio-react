@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-07T08:06:39.654Z",
+  "title": "Design System: Дмитрий Кирилкин — Крупный план",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Лиловая бумага",
+        "tonalRamp": [
+          "oklch(15% 0.01818 322.99)",
+          "oklch(26.43% 0.01818 322.99)",
+          "oklch(37.86% 0.01818 322.99)",
+          "oklch(49.29% 0.01818 322.99)",
+          "oklch(60.71% 0.01818 322.99)",
+          "oklch(72.14% 0.01818 322.99)",
+          "oklch(83.57% 0.01818 322.99)",
+          "oklch(95% 0.01818 322.99)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Сливовые чернила",
+        "tonalRamp": [
+          "oklch(15% 0.07845 330.38)",
+          "oklch(26.43% 0.07845 330.38)",
+          "oklch(37.86% 0.07845 330.38)",
+          "oklch(49.29% 0.07845 330.38)",
+          "oklch(60.71% 0.07845 330.38)",
+          "oklch(72.14% 0.07845 330.38)",
+          "oklch(83.57% 0.07845 330.38)",
+          "oklch(95% 0.07845 330.38)"
+        ]
+      },
+      "plum": {
+        "role": "primary",
+        "displayName": "Сливовый разворот",
+        "tonalRamp": [
+          "oklch(15% 0.09151 334.84)",
+          "oklch(26.43% 0.09151 334.84)",
+          "oklch(37.86% 0.09151 334.84)",
+          "oklch(49.29% 0.09151 334.84)",
+          "oklch(60.71% 0.09151 334.84)",
+          "oklch(72.14% 0.09151 334.84)",
+          "oklch(83.57% 0.09151 334.84)",
+          "oklch(95% 0.09151 334.84)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Приглушённые чернила",
+        "tonalRamp": [
+          "oklch(15% 0.05196 334.83)",
+          "oklch(26.43% 0.05196 334.83)",
+          "oklch(37.86% 0.05196 334.83)",
+          "oklch(49.29% 0.05196 334.83)",
+          "oklch(60.71% 0.05196 334.83)",
+          "oklch(72.14% 0.05196 334.83)",
+          "oklch(83.57% 0.05196 334.83)",
+          "oklch(95% 0.05196 334.83)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Почти белая бумага",
+        "tonalRamp": [
+          "oklch(15% 0.00337 325.60)",
+          "oklch(26.43% 0.00337 325.60)",
+          "oklch(37.86% 0.00337 325.60)",
+          "oklch(49.29% 0.00337 325.60)",
+          "oklch(60.71% 0.00337 325.60)",
+          "oklch(72.14% 0.00337 325.60)",
+          "oklch(83.57% 0.00337 325.60)",
+          "oklch(95% 0.00337 325.60)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Лиловая линия",
+        "tonalRamp": [
+          "oklch(15% 0.02988 329.37)",
+          "oklch(26.43% 0.02988 329.37)",
+          "oklch(37.86% 0.02988 329.37)",
+          "oklch(49.29% 0.02988 329.37)",
+          "oklch(60.71% 0.02988 329.37)",
+          "oklch(72.14% 0.02988 329.37)",
+          "oklch(83.57% 0.02988 329.37)",
+          "oklch(95% 0.02988 329.37)"
+        ]
+      },
+      "display-accent": {
+        "role": "primary",
+        "displayName": "Приглушённая розовая слива",
+        "tonalRamp": [
+          "oklch(15% 0.07560 344.85)",
+          "oklch(26.43% 0.07560 344.85)",
+          "oklch(37.86% 0.07560 344.85)",
+          "oklch(49.29% 0.07560 344.85)",
+          "oklch(60.71% 0.07560 344.85)",
+          "oklch(72.14% 0.07560 344.85)",
+          "oklch(83.57% 0.07560 344.85)",
+          "oklch(95% 0.07560 344.85)"
+        ]
+      },
+      "spread-text": {
+        "role": "neutral",
+        "displayName": "Светлый текст разворота",
+        "tonalRamp": [
+          "oklch(15% 0.01572 335.05)",
+          "oklch(26.43% 0.01572 335.05)",
+          "oklch(37.86% 0.01572 335.05)",
+          "oklch(49.29% 0.01572 335.05)",
+          "oklch(60.71% 0.01572 335.05)",
+          "oklch(72.14% 0.01572 335.05)",
+          "oklch(83.57% 0.01572 335.05)",
+          "oklch(95% 0.01572 335.05)"
+        ]
+      },
+      "work-lilac-light": {
+        "role": "neutral",
+        "displayName": "Светлая сирень",
+        "tonalRamp": [
+          "oklch(15% 0.01018 325.66)",
+          "oklch(26.43% 0.01018 325.66)",
+          "oklch(37.86% 0.01018 325.66)",
+          "oklch(49.29% 0.01018 325.66)",
+          "oklch(60.71% 0.01018 325.66)",
+          "oklch(72.14% 0.01018 325.66)",
+          "oklch(83.57% 0.01018 325.66)",
+          "oklch(95% 0.01018 325.66)"
+        ]
+      },
+      "work-lilac": {
+        "role": "neutral",
+        "displayName": "Сирень",
+        "tonalRamp": [
+          "oklch(15% 0.02159 316.45)",
+          "oklch(26.43% 0.02159 316.45)",
+          "oklch(37.86% 0.02159 316.45)",
+          "oklch(49.29% 0.02159 316.45)",
+          "oklch(60.71% 0.02159 316.45)",
+          "oklch(72.14% 0.02159 316.45)",
+          "oklch(83.57% 0.02159 316.45)",
+          "oklch(95% 0.02159 316.45)"
+        ]
+      },
+      "work-sage": {
+        "role": "secondary",
+        "displayName": "Шалфей",
+        "tonalRamp": [
+          "oklch(15% 0.00907 134.88)",
+          "oklch(26.43% 0.00907 134.88)",
+          "oklch(37.86% 0.00907 134.88)",
+          "oklch(49.29% 0.00907 134.88)",
+          "oklch(60.71% 0.00907 134.88)",
+          "oklch(72.14% 0.00907 134.88)",
+          "oklch(83.57% 0.00907 134.88)",
+          "oklch(95% 0.00907 134.88)"
+        ]
+      },
+      "focus-light": {
+        "role": "primary",
+        "displayName": "Медный фокус",
+        "tonalRamp": [
+          "oklch(15% 0.15451 43.89)",
+          "oklch(26.43% 0.15451 43.89)",
+          "oklch(37.86% 0.15451 43.89)",
+          "oklch(49.29% 0.15451 43.89)",
+          "oklch(60.71% 0.15451 43.89)",
+          "oklch(72.14% 0.15451 43.89)",
+          "oklch(83.57% 0.15451 43.89)",
+          "oklch(95% 0.15451 43.89)"
+        ]
+      },
+      "focus-dark": {
+        "role": "primary",
+        "displayName": "Светлый янтарный фокус",
+        "tonalRamp": [
+          "oklch(15% 0.09679 76.06)",
+          "oklch(26.43% 0.09679 76.06)",
+          "oklch(37.86% 0.09679 76.06)",
+          "oklch(49.29% 0.09679 76.06)",
+          "oklch(60.71% 0.09679 76.06)",
+          "oklch(72.14% 0.09679 76.06)",
+          "oklch(83.57% 0.09679 76.06)",
+          "oklch(95% 0.09679 76.06)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Prata — крупный заголовок",
+        "purpose": "Первые экраны основных страниц; утверждённые адаптивные размеры описаны в DESIGN.md, frontmatter содержит сокращённую шкалу."
+      },
+      "body": {
+        "displayName": "Golos Text — чтение",
+        "purpose": "Описание работ, навигация и подписи."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "perspective",
+        "value": "320ms cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Смена роли: clip-path inset(0 0 12% 0) → inset(0), opacity .8 → 1."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-max",
+        "value": "370px"
+      },
+      {
+        "name": "gallery-medium-min",
+        "value": "600px"
+      },
+      {
+        "name": "desktop-min",
+        "value": "900px"
+      }
+    ],
+    "accessibility": {
+      "focus": "3px solid outline, 6px offset; light/dark focus tokens",
+      "reducedMotion": "All animations/transitions disabled; scroll-behavior:auto.",
+      "dialog": "Escape, close button and backdrop dismiss; focus returns to opener; body scroll locked."
+    },
+    "tonalRampNote": "Synthesized OKLCH ramps for panel exploration only; implemented source colors are normative in DESIGN.md."
+  },
+  "components": [
+    {
+      "name": "Закрытие просмотрщика",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Сливовая кнопка закрытия; внешность без логики dialog.",
+      "html": "<button type=\"button\" class=\"ds-sample ds-close\">Закрыть ×</button>",
+      "css": ".ds-close{font-family:var(--portfolio-sans,'Golos Text',sans-serif);font-size:12px;min-height:44px;padding:10px 14px;background:#421c3f;color:white;border:0;border-radius:0;cursor:pointer}.ds-close:hover{background:#421c3f}.ds-sample:focus-visible{outline:3px solid #b54908;outline-offset:6px;}"
+    },
+    {
+      "name": "Выбор роли",
+      "kind": "button",
+      "refersTo": "button-role",
+      "description": "Прозрачная кнопка невыбранной роли.",
+      "html": "<button class=\"ds-sample ds-role\" type=\"button\" aria-pressed=\"false\">Глазами техника</button>",
+      "css": ".ds-role{font-family:var(--portfolio-sans,'Golos Text',sans-serif);min-height:44px;padding:10px 12px;font-size:12px;border:1px solid #946889;border-radius:0;background:transparent;color:#421c3f;cursor:pointer}.ds-role:hover{background:transparent}.ds-sample:focus-visible{outline:3px solid #b54908;outline-offset:6px;}"
+    },
+    {
+      "name": "Выбранная роль",
+      "kind": "button",
+      "refersTo": "button-role-selected",
+      "description": "Сливовая заливка и aria-pressed обозначают текущую роль.",
+      "html": "<button class=\"ds-sample ds-selected\" type=\"button\" aria-pressed=\"true\">Глазами клиента</button>",
+      "css": ".ds-selected{font-family:var(--portfolio-sans,'Golos Text',sans-serif);min-height:44px;padding:10px 12px;font-size:12px;border:1px solid #421c3f;border-radius:0;background:#421c3f;color:white;cursor:pointer}.ds-selected:hover{background:#421c3f}.ds-sample:focus-visible{outline:3px solid #b54908;outline-offset:6px;}"
+    },
+    {
+      "name": "Навигация",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Текстовые ссылки без декоративной оболочки.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Пример навигации\"><a class=\"ds-sample\" href=\"#work\">Работы</a><a class=\"ds-sample\" href=\"#about\">Обо мне</a><a class=\"ds-sample\" href=\"#contact\">Обсудить проект</a></nav>",
+      "css": ".ds-nav{font-family:var(--portfolio-sans,'Golos Text',sans-serif);display:flex;gap:20px;flex-wrap:wrap;color:#421c3f;font-size:12px}.ds-nav a{min-height:44px;display:inline-flex;align-items:center;color:inherit;text-decoration:none}.ds-nav a:hover{color:inherit}.ds-sample:focus-visible{outline:3px solid #b54908;outline-offset:6px;}"
+    },
+    {
+      "name": "Статус работы",
+      "kind": "chip",
+      "refersTo": "status-tag",
+      "description": "Неинтерактивная метка подтверждённого статуса.",
+      "html": "<span class=\"ds-status\">Демопроект</span>",
+      "css": ".ds-status{font-family:var(--portfolio-sans,'Golos Text',sans-serif);display:inline-block;font-size:10px;line-height:1.65;border:1px solid #a4869b;padding:2px 8px;white-space:nowrap;color:#421c3f;background:transparent;border-radius:0}"
+    },
+    {
+      "name": "Ссылка на кейс",
+      "kind": "custom",
+      "refersTo": "text-link",
+      "description": "Подчёркнутая ссылка со стрелкой.",
+      "html": "<a class=\"ds-sample ds-link\" href=\"#case\">Смотреть кейс <svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" aria-hidden=\"true\"><path d=\"M4 12h16M13 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-link{font-family:var(--portfolio-sans,'Golos Text',sans-serif);display:inline-flex;align-items:center;gap:20px;min-height:44px;font-size:14px;color:#421c3f;text-decoration:underline;text-underline-offset:6px}.ds-link:hover{color:#421c3f}.ds-sample:focus-visible{outline:3px solid #b54908;outline-offset:6px;}"
+    },
+    {
+      "name": "Поверхность просмотрщика",
+      "kind": "custom",
+      "refersTo": "image-viewer",
+      "description": "Прямоугольная поверхность и липкая шапка; пример не открывает модальный dialog.",
+      "html": "<section class=\"ds-viewer\" aria-label=\"Пример просмотрщика\"><div class=\"ds-viewer-head\"><p>Клиент выбирает место зарядки</p><button class=\"ds-sample\" type=\"button\">Закрыть ×</button></div><p class=\"ds-viewer-note\">Область оригинального изображения</p><a class=\"ds-sample ds-original\" href=\"#original\">Открыть исходный файл</a></section>",
+      "css": ".ds-viewer{font-family:var(--portfolio-sans,'Golos Text',sans-serif);background:#fbf9fb;color:#421c3f;border:0;border-radius:0;padding:0 20px 22px;width:min(960px,80vw);max-height:92dvh}.ds-viewer-head{position:sticky;top:0;display:flex;gap:16px;align-items:center;justify-content:space-between;background:#fbf9fb;padding:14px 0}.ds-viewer-head p{font-size:12px}.ds-viewer-head button{font-family:var(--portfolio-sans,'Golos Text',sans-serif);background:#421c3f;color:white;border:0;border-radius:0;min-height:44px;padding:10px 14px;font-size:12px;white-space:nowrap;cursor:pointer}.ds-viewer-head button:hover{background:#421c3f}.ds-viewer-note{font-size:14px;line-height:1.65}.ds-original{display:inline-block;font-size:13px;margin-top:22px;min-height:44px;color:#421c3f;text-decoration:underline;text-underline-offset:4px}.ds-original:hover{color:#421c3f}.ds-sample:focus-visible{outline:3px solid #b54908;outline-offset:6px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Крупный план",
+    "overview": "Выбранный пользователем визуальный язык всего портфолио: крупная выразительная антиква, лиловая поверхность и реальные интерфейсы приложений без дополнительных подложек. Дизайн даёт рассмотреть работу и спокойно прочитать объяснение; авторская интонация возникает из масштаба текста и изображений.\n\nСистема предназначена для разных мобильных продуктов и аудитории заказчиков. Утверждённый шаблон применяется на основных маршрутах `/`, `/projects`, `/projects/[slug]` и `/cases/[slug]` через общий `SiteFrame`. Прежние `/preview` и дочерние адреса, включая `/preview/charging`, перенаправляют на основные страницы; `/figma-demo` ведёт на главную. Структура сохраняет отдельные группы «Кейсы» и «Работы», каталог и переходы между кейсами и приложениями. Нейтральная роль автора остаётся рабочей. Объём переноса описан в [site-rollout.md](docs/new-portfolio/site-rollout.md), результаты проверки — в [site-verification.md](docs/new-portfolio/site-verification.md). Локальный перенос завершён; публикация выполняется отдельно по процессу dev → main.",
+    "keyCharacteristics": [
+      "Крупная Prata рядом с спокойным Golos Text.",
+      "Реальные интерфейсы без дополнительных подложек; лупа вне скриншота.",
+      "Чередование широких изображений и спокойных текстовых разделов.",
+      "Прямоугольные поверхности, тонкие линии и круглые фотографии автора.",
+      "Детальный просмотр изображений с доступным управлением."
+    ],
+    "rules": [
+      {
+        "name": "The Surface Rhythm Rule",
+        "body": "Цветовые поля разделяют последовательность чтения и просмотра; новые работы используют существующее чередование, пока содержанию не требуется отдельное решение.",
+        "section": "colors"
+      },
+      {
+        "name": "The Readable Interface Rule",
+        "body": "Типографика подписи не заменяет увеличение экрана: реальные изображения сохраняют пропорции и доступны в исходном размере.",
+        "section": "typography"
+      },
+      {
+        "name": "The Visible Focus Rule",
+        "body": "Ссылки и кнопки показывают outline 3px с отступом 6px; на тёмной поверхности используется светлый цвет фокуса. При `prefers-reduced-motion: reduce` отключаются анимации, переходы и плавная прокрутка.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do сохранять крупную антикву и лиловую основу; галереи оставлять без отдельной подложки. Кнопки увеличения не перекрывают интерфейсы.",
+      "Do показывать реальные интерфейсы разных проектов с сохранением пропорций и доступным увеличением.",
+      "Do разделять промослайды и чистые экраны явными подписями.",
+      "Do сохранять доступную клавиатурную навигацию, возврат фокуса и reduced motion.",
+      "Do переносить длинные названия и проверять расстояние от них до изображений на телефоне, планшете и десктопе."
+    ],
+    "donts": [
+      "Don't превращать оформление всего портфолио в отраслевую идентичность одного кейса зарядки.",
+      "Don't обрезать интерфейсы ради одинакового размера декоративных карточек.",
+      "Don't добавлять утверждения о результатах или личном авторстве через подписи и визуальные бейджи без подтверждения.",
+      "Don't скрывать основной текст и изображения до завершения анимации.",
+      "Don't считать завершённый локальный перенос публикацией сайта; для публикации действует процесс dev → main."
+    ]
+  }
+}
